@@ -1,0 +1,129 @@
+\name{gell}
+\alias{gell}
+\alias{gell.default}
+\alias{gell.gell}
+%- Also NEED an '\alias' for EACH other topic documented here.
+\title{
+(U, D) Representation of an Ellipsoid in R^p.
+}
+\description{
+\code{gell} provides a set of ways to specify a generalized ellipsoid in \eqn{R^p},
+using the (U, D) representation to include all special cases, where
+U is a square orthogonal matrix, and D is diagonal with extended non-negative real 
+numbers, i.e. 0, Inf or a positive real.
+
+The resulting class of ellipsoids includes degenerate ellipsoids that are flat and/or 
+unbounded. Thus ellipsoids are naturally defined to include lines, 
+hyperplanes, points, cylinders, etc.
+}
+\usage{
+
+gell(x, ...)
+
+\method{gell}{default}(center = 0, Sigma, ip, span, A, u, d = 1, epsfac = 2)
+
+\method{gell}{gell}(x, ...)
+
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+
+  \item{x}{
+An object
+}
+
+  \item{center}{
+A vector specifying the center of the ellipsoid
+}
+  \item{Sigma}{
+A square, symmetric, non-negative definite dispersion (variance) matrix
+}
+  \item{ip}{
+A square, symmetric, non-negative definite inner product matrix. See Details.
+}
+  \item{span}{
+A subspace with a given span.  See Details.
+}
+  \item{A}{
+A matrix giving a linear transformation of the unit sphere.
+}
+  \item{u}{
+A U matrix
+}
+  \item{d}{
+Diagonal elements of a D matrix
+}
+  \item{epsfac}{
+Factor of \code{.Machine$double.eps} used to distinguish zero vs. positive singular values
+}
+
+  \item{\dots}{
+Other arguments
+}
+
+}
+\details{
+\code{} can currently generate the (U, D) representation from 5 ways of
+specifying an ellipsoid:
+
+\enumerate{
+	\item From the non-negative definite dispersion (variance) matrix, Sigma: U D^2
+	U' = Sigma, where some elements of the diagonal matrix D can be 0. This can
+	only generate bounded ellipsoids, possibly flat.
+	
+	\item From the non-negative definite inner product matrix 'ip': U W^2 U = C
+	where some elements of the diagonal matrix W can be 0. Then set D = W^{-1}
+	where 0^{-1} = Inf. This can only generate fat (non-empty interior)
+	ellipsoids, possibly unbounded.
+	
+	\item From a subspace spanned by 'span' Let U_1 be an orthonormal basis of 
+	Span('span'), let U_2 be an orthonormal basis of the orthogonal complement, 
+	the U = [ U_1  U_2 ] and D = diag( c(Inf,...,Inf, 0,..,0)) where the number 
+	of Inf's is equal to the number of columns of U_1.
+	
+	\item From a transformation of the unit sphere given by A(Unit sphere) where 
+	A = UDV', i.e. the SVD.
+	
+	\item (Generalization of 4): A, d where A is any matrix and d is a vector of 
+	factors corresponding to columns of A. These factors can be 0, positive or
+	Inf. In this case U and D are such that U D(Unit sphere) = A diag(d)(Unit
+	sphere). This is the only representation that can be used for all forms of
+	ellipsoids and in which any ellipsoid can be represented.
+}
+}
+\value{
+A (U, D) representation of the ellipsoid, with components
+%%  If it is a LIST, use
+  \item{center}{center}
+ \item{u}{Right singular vectors}
+ \item{d}{Singular values}
+%% ...
+}
+\references{
+Friendly, M., Monette, G. and Fox, J. (2012).
+Elliptical Insights: Understanding Statistical Methods through Elliptical Geometry.
+Under review.
+
+}
+\author{
+Georges Monette
+}
+%\note{
+%%%  ~~further notes~~
+%}
+
+%% ~Make other sections like Warning with \section{Warning }{....} ~
+
+\seealso{
+\code{\link{dual}}, 
+\code{\link{gmult}}, 
+\code{\link{signature}}, 
+
+}
+\examples{
+# None yet
+}
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{dplot}
+\keyword{multivariate }% __ONLY ONE__ keyword per line

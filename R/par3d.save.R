@@ -17,16 +17,16 @@
 #' None yet.
 #' 
 #' @aliases par3d.restore par3d.save
-#' @param params A list of \code{par3d} parameters to save
-#' @param parms %% ~~Describe \code{parms} here~~
+#' @param params   A list of \code{par3d} parameters to save
+#' @param parms    %% ~~Describe \code{parms} here~~
 #' @param filename Name of a \code{.rds} file to save to or restore from
-#' @param dev The rgl device.  Currently unused
+#' @param dev     The rgl device.  Currently unused
 #' @return \code{par3d.save} returns a list with the current values of the
 #' \code{par3d} parameters named in \code{params}. %% If it is a LIST, use %%
 #' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
 #' 'comp2'} %% ...
 #' @author Michael Friendly
-#' @seealso \code{\link[rgl]{par3d}}, ~~~
+#' @seealso \code{\link[rgl]{par3d}}
 #' @keywords dplot dynamic
 #' @examples
 #' 

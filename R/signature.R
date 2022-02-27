@@ -7,10 +7,9 @@
 #' 
 #' @param G A class \code{"gell"} objects
 #' @return A vector of length 3, with named components \code{pos}, \code{zero}
-#' and \code{inf} %% If it is a LIST, use %% \item{comp1 }{Description of
-#' 'comp1'} %% \item{comp2 }{Description of 'comp2'} %% ...
+#' and \code{inf} 
 #' @author Georges Monette
-#' @seealso \code{\link{isbounded}}, ~~~
+#' @seealso \code{\link{isbounded}}
 #' @references Friendly, M., Monette, G. and Fox, J. (2012). Elliptical
 #' Insights: Understanding Statistical Methods through Elliptical Geometry.
 #' Under review.

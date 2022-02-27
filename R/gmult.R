@@ -6,15 +6,14 @@
 #' The matrix \code{A} can be non-singular, for a standard linear
 #' transformation, or singular, for a projection to a subspace.
 #' 
-#' @param A A matrix describing a linear transformation, conforming to the U
-#' component of \code{G} for matrix multiplication.
-#' @param G A \code{gell} object
+#' @param A    A matrix describing a linear transformation, conforming to the U
+#'             component of \code{G} for matrix multiplication.
+#' @param G    A \code{gell} object
 #' @param epsfac Factor of \code{.Machine$double.eps} used to distinguish zero
-#' vs. positive singular values
-#' @return A list with the following components: %% If it is a LIST, use
-#' \item{u}{Right singular vectors} \item{d}{Singular values} %% ...
-#' @note This implementation should be changed so that it provides an S3 method
-#' for class \code{"gell"} objects for which it was intended.
+#'             vs. positive singular values
+#' @return     \code{gell} object
+#' @note       This implementation should be changed so that it provides an S3 method
+#'             for class \code{"gell"} objects for which it was intended.
 #' @author Georges Monette
 #' @seealso \code{\link{gell}}, \code{\link{dual}}, \code{\link{signature}}
 #' @keywords dplot algebra

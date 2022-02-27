@@ -12,7 +12,8 @@
 #' \code{} can currently generate the (U, D) representation from 5 ways of
 #' specifying an ellipsoid:
 #' 
-#' \enumerate{ \item From the non-negative definite dispersion (variance)
+#' \enumerate{ 
+#' \item From the non-negative definite dispersion (variance)
 #' matrix, Sigma: U D^2 U' = Sigma, where some elements of the diagonal matrix
 #' D can be 0. This can only generate bounded ellipsoids, possibly flat.
 #' 
@@ -56,7 +57,7 @@
 #' @seealso \code{\link{dual}}, \code{\link{gmult}}, \code{\link{signature}},
 #' @references Friendly, M., Monette, G. and Fox, J. (2012). Elliptical
 #' Insights: Understanding Statistical Methods through Elliptical Geometry.
-#' Under review.
+#' \emph{Statistical Science}
 #' @keywords dplot multivariate
 #' @examples
 #' 

@@ -15,7 +15,7 @@
 #' in \eqn{R^p} with empty interior.
 #' 
 #' 
-#' @aliases isbounded isbounded.gell isfat isfat.gell isflat isunbounded
+#' @aliases isBounded isBounded.gell isFat isFat.gell isFlat isUnbounded
 #' @param x A class \code{"gell"} object
 #' @param   \dots Other arguments, not used.
 #' @return  TRUE or FALSE
@@ -30,25 +30,25 @@
 #' 
 #' # None yet
 #' 
-isbounded <-
-function(x,...) UseMethod('isbounded')
+isBounded <-
+function(x,...) UseMethod('isBounded')
 
-#' @rdname isbounded
+#' @rdname isBounded
 #' @export
-isbounded.gell <- function(x,...) all( is.finite(x$d))
+isBounded.gell <- function(x,...) all( is.finite(x$d))
 
-#' @rdname isbounded
+#' @rdname isBounded
 #' @export
-isfat <- function(x,...) UseMethod('isfat')
-isfat.gell <- function(x,...) all( x$d > 0)
+isFat <- function(x,...) UseMethod('isFat')
+isFat.gell <- function(x,...) all( x$d > 0)
 
-#' @rdname isbounded
+#' @rdname isBounded
 #' @export
-isflat <- function(x,...) UseMethod('isflat')
-isflat.gell <- function(x,...) !isfat(x,...)
+isFlat <- function(x,...) UseMethod('isFlat')
+isFlat.gell <- function(x,...) !isFat(x,...)
 
-#' @rdname isbounded
+#' @rdname isBounded
 #' @export
-isunbounded <- function(x,...) UseMethod('isunbounded')
-isunbounded.gell <- function(x,...) !isbounded(x,...)
+isUnbounded <- function(x,...) UseMethod('isUnbounded')
+isUnbounded.gell <- function(x,...) !isBounded(x,...)
 

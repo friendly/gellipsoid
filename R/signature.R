@@ -9,7 +9,7 @@
 #' @return    A vector of length 3, with named components \code{pos}, \code{zero}
 #'            and \code{inf} 
 #' @author Georges Monette
-#' @seealso \code{\link{isbounded}}
+#' @seealso \code{\link{isBounded}}
 #' @references Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
 #' Insights: Understanding Statistical Methods through Elliptical Geometry.
 #' \emph{Statistical Science}, \bold{28}(1), 1-39.

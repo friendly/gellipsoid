@@ -87,7 +87,7 @@ ell3d.gell <- function( x,
                         segments = 40, 
                         shade=TRUE, wire=FALSE, ...){
   
-  if ( isbounded(x) ) { # proper (fat bounded) ellipsoid or bounded flat
+  if ( isBounded(x) ) { # proper (fat bounded) ellipsoid or bounded flat
         E <- ellipsoid( 
           center = x$center, 
           shape = tcrossprod( x$u %*% diag(x$d)), radius = 1, segments = segments)

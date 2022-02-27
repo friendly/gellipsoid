@@ -27,11 +27,11 @@
 #' between spaces of different dimensions) and under duality ('inverse')
 #' transformations.
 #' 
-#' Unbounded ellipsoids, e.g. cylinders with elliptical cross-sections,
+#' \bold{Unbounded} ellipsoids, e.g. cylinders with elliptical cross-sections,
 #' correspond to singular inner products, i.e. inner products defined by a
 #' singular inner product matrix.
 #' 
-#' Flat ellipsoids correspond to singular variances. The corresponding inner
+#' \bold{Flat} ellipsoids correspond to singular variances. The corresponding inner
 #' product is defined only on the supporting subspace.
 #' 
 #' Ellipsoids that are both flat and unbounded correspond to lines, points,
@@ -42,11 +42,11 @@
 #' 
 #' \enumerate{ 
 #' \item From the non-negative definite dispersion (variance)
-#' matrix, Sigma: U D^2 U' = Sigma, 
+#' matrix, Sigma: \eqn{U D^2 U' = \Sigma}, 
 #' where some elements of the diagonal matrix
 #' D can be 0. This can only generate bounded ellipsoids, possibly flat.
 #' 
-#' \item From the non-negative definite inner product matrix 'ip': U W^2 U = C
+#' \item From the non-negative definite inner product matrix 'ip': \eqn{U W^2 U = C}
 #' where some elements of the diagonal matrix W can be 0. Then set D = W^-1
 #' where 0^-1 = Inf. This can only generate fat (non-empty interior)
 #' ellipsoids, possibly unbounded.
@@ -57,9 +57,9 @@
 #' of Inf's is equal to the number of columns of U_1.
 #' 
 #' \item From a transformation of the unit sphere given by A(Unit sphere) where
-#' A = UDV', i.e. the SVD.
+#' \eqn{A = UDV'}, i.e. the SVD.
 #' 
-#' \item (Generalization of 4): A, d where A is any matrix and d is a vector of
+#' \item (Generalization of 4): (A, d) where A is any matrix and d is a vector of
 #' factors corresponding to columns of A. These factors can be 0, positive or
 #' Inf. In this case U and D are such that U D(Unit sphere) = A diag(d)(Unit
 #' sphere). This is the only representation that can be used for all forms of
@@ -75,7 +75,7 @@
 #' @seealso None yet %~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
 #' @references Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
 #' Insights: Understanding Statistical Methods through Elliptical Geometry.
-#' \bold{28}(1), 1-39.
+#' \emph{Statistical Science}, \bold{28}(1), 1-39.
 #' @keywords package
 #' @examples
 #' 

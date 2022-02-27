@@ -7,6 +7,10 @@
 \title{(U, D) Representation of an Ellipsoid in R^p.}
 \usage{
 gell(x, ...)
+
+\method{gell}{default}(center = 0, Sigma, ip, span, A, u, d = 1, epsfac = 2)
+
+\method{gell}{gell}(x, ...)
 }
 \arguments{
 \item{x}{An object}
@@ -49,7 +53,7 @@ The resulting class of ellipsoids includes degenerate ellipsoids that are
 flat and/or unbounded. Thus ellipsoids are naturally defined to include
 lines, hyperplanes, points, cylinders, etc.
 
-\code{} can currently generate the (U, D) representation from 5 ways of
+\code{gell} can currently generate the (U, D) representation from 5 ways of
 specifying an ellipsoid:
 
 \enumerate{ 
@@ -78,7 +82,9 @@ ellipsoids and in which any ellipsoid can be represented. }
 }
 \examples{
 
-# None yet
+gell(Sigma = diag(3))    # the unit sphere
+
+(zplane <- gell(span = diag(3)[,1:2]))    # a plane
 
 }
 \references{

@@ -9,7 +9,7 @@
 #' flat and/or unbounded. Thus ellipsoids are naturally defined to include
 #' lines, hyperplanes, points, cylinders, etc.
 #' 
-#' \code{} can currently generate the (U, D) representation from 5 ways of
+#' \code{gell} can currently generate the (U, D) representation from 5 ways of
 #' specifying an ellipsoid:
 #' 
 #' \enumerate{ 
@@ -42,7 +42,7 @@
 #' @param Sigma  A square, symmetric, non-negative definite dispersion
 #'               (variance) matrix
 #' @param ip     A square, symmetric, non-negative definite inner product matrix.
-#' See Details.
+#'               See Details.
 #' @param span   A subspace with a given span.  See Details.
 #' @param A      A matrix giving a linear transformation of the unit sphere.
 #' @param u      A U matrix
@@ -63,10 +63,14 @@
 #' @export
 #' @examples
 #' 
-#' # None yet
+#' gell(Sigma = diag(3))    # the unit sphere
+#' 
+#' (zplane <- gell(span = diag(3)[,1:2]))    # a plane
 #' 
 gell <- function(x,...) UseMethod("gell")
 
+#' @rdname gell
+#' @export
 gell.default <- function(center = 0, Sigma, ip, span , A, u, d=1, epsfac = 2){
   # 
   # U-D representation of an ellipsoid in R^d.
@@ -201,6 +205,8 @@ gell.default <- function(center = 0, Sigma, ip, span , A, u, d=1, epsfac = 2){
   stop( "combination of arguments not implemented")
 }
 
+#' @rdname gell
+#' @export
 gell.gell <- function(x,...){
   if( ! all(x$d == rev(sort(x$d)))) {
     warning( 'd was not sorted')

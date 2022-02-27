@@ -6,6 +6,8 @@
 \title{Dual or 'Inverse' of an ellipsoid}
 \usage{
 dual(x, ...)
+
+\method{dual}{gell}(x, ...)
 }
 \arguments{
 \item{x}{An object, of class \code{"gell"}}
@@ -48,7 +50,7 @@ Dempster, A. (1969). \emph{Elements of Continuous Multivariate
 Analysis} Reading, MA: Addison-Wesley.
 }
 \seealso{
-\code{\link{gell}}, ~~~
+\code{\link{gell}}
 }
 \author{
 Georges Monette

@@ -9,9 +9,10 @@
 #' singular values in D.
 #' 
 #' They are included here mainly as computational definitions of the terms
-#' \sQuote{bounded} for an ellipsoid with finite extent, \sQuote{fat}, for a
-#' bounded ellipsoid with non-empty interior, \sQuote{flat}, for degenerate
-#' (singular) ellipsoids in \eqn{R^p} with empty interior.
+#' \sQuote{bounded} for an ellipsoid with finite extent, 
+#' \sQuote{fat}, for a bounded ellipsoid with non-empty interior, 
+#' \sQuote{flat}, for degenerate (singular) ellipsoids 
+#' in \eqn{R^p} with empty interior.
 #' 
 #' 
 #' @aliases isbounded isbounded.gell isfat isfat.gell isflat isunbounded
@@ -32,11 +33,22 @@
 isbounded <-
 function(x,...) UseMethod('isbounded')
 
+#' @rdname isbounded
+#' @export
 isbounded.gell <- function(x,...) all( is.finite(x$d))
 
+#' @rdname isbounded
+#' @export
 isfat <- function(x,...) UseMethod('isfat')
 isfat.gell <- function(x,...) all( x$d > 0)
 
-isflat <- function(x,...) !isfat(x,...)
-isunbounded <- function(x,...) !isbounded(x,...)
+#' @rdname isbounded
+#' @export
+isflat <- function(x,...) UseMethod('isflat')
+isflat.gell <- function(x,...) !isfat(x,...)
+
+#' @rdname isbounded
+#' @export
+isunbounded <- function(x,...) UseMethod('isunbounded')
+isunbounded.gell <- function(x,...) !isbounded(x,...)
 

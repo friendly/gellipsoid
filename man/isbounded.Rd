@@ -10,6 +10,14 @@
 \title{Tests for Classes of Generalized Ellipsoids}
 \usage{
 isbounded(x, ...)
+
+\method{isbounded}{gell}(x, ...)
+
+isfat(x, ...)
+
+isflat(x, ...)
+
+isunbounded(x, ...)
 }
 \arguments{
 \item{x}{A class \code{"gell"} object}
@@ -26,9 +34,10 @@ singular values in D.
 }
 \details{
 They are included here mainly as computational definitions of the terms
-\sQuote{bounded} for an ellipsoid with finite extent, \sQuote{fat}, for a
-bounded ellipsoid with non-empty interior, \sQuote{flat}, for degenerate
-(singular) ellipsoids in \eqn{R^p} with empty interior.
+\sQuote{bounded} for an ellipsoid with finite extent, 
+\sQuote{fat}, for a bounded ellipsoid with non-empty interior, 
+\sQuote{flat}, for degenerate (singular) ellipsoids 
+in \eqn{R^p} with empty interior.
 }
 \examples{
 

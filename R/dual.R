@@ -16,7 +16,7 @@
 #' @return A (U, D) representation of the dual, with components %% If it is a
 #' LIST, use \item{u}{Right singular vectors} \item{d}{Singular values} %% ...
 #' @author Georges Monette
-#' @seealso \code{\link{gell}}, ~~~
+#' @seealso \code{\link{gell}}
 #' @references Dempster, A. (1969). \emph{Elements of Continuous Multivariate
 #' Analysis} Reading, MA: Addison-Wesley.
 #' @keywords aplot
@@ -37,6 +37,9 @@
 #' 
 dual <-
 function(x,...) UseMethod("dual")
+
+#' @rdname dual
+#' @export
 
 dual.gell <-
 function(x,...) {

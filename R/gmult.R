@@ -17,6 +17,7 @@
 #' @author Georges Monette
 #' @seealso \code{\link{gell}}, \code{\link{dual}}, \code{\link{signature}}
 #' @keywords dplot algebra
+#' @export
 #' @examples
 #' 
 #' (zplane <- gell(span = diag(3)[,1:2]))  # a plane

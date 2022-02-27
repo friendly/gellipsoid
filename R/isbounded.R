@@ -20,10 +20,11 @@
 #' @return  TRUE or FALSE
 #' @author Georges Monette
 #' @seealso \code{\link{signature}}
-#' @references Friendly, M., Monette, G. and Fox, J. (2012). Elliptical
+#' @references Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
 #' Insights: Understanding Statistical Methods through Elliptical Geometry.
-#' \emph{Statistical Science}
+#' \emph{Statistical Science}, \bold{28}(1), 1-39.
 #' @keywords logic 
+#' @export
 #' @examples
 #' 
 #' # None yet

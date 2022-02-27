@@ -28,6 +28,7 @@
 #' @return A qmesh3d object 
 #' @author Michael Friendly and John Fox, extending Duncan Murdoch
 #' @keywords dplot
+#' @export
 #' @examples
 #' ## none yet
 #' 

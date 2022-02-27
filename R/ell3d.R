@@ -24,6 +24,7 @@
 #' @author Georges Monette
 #' @seealso \code{\link{ellipsoid}}, \code{\link{gell}}
 #' @keywords hplot
+#' @export
 #' @examples
 #' 
 #' # a proper ellipsoid, and its inverse

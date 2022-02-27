@@ -27,6 +27,7 @@
 #' of the vectors.
 #' @author Michael Friendly
 #' @seealso \code{\link[rgl]{axis3d}}, \code{\link[rgl]{box3d}}
+#' @export
 #' @examples
 #' 
 #' # show two different sets of basis vectors

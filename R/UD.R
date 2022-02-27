@@ -12,6 +12,7 @@
 #' @author Georges Monette
 #' @seealso \code{\link[base]{svd}}
 #' @keywords dplot
+#' @export
 #' @examples
 #' 
 #' # None yet

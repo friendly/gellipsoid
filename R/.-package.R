@@ -6,9 +6,13 @@
 #' both degenerate and unbounded ellipsoids, together with methods for linear
 #' and duality transformations, and for plotting
 #' 
-#' \tabular{ll}{ Package: \tab gellipsoid\cr Type: \tab Package\cr Version:
-#' \tab 0.6\cr Date: \tab 2012-04-06\cr License: \tab GPL (>=2)\cr LazyLoad:
-#' \tab yes\cr }
+#' \tabular{ll}{ 
+#' Package: \tab gellipsoid\cr Type: \tab Package\cr 
+#' Version: \tab 0.6\cr 
+#' Date: \tab 2012-04-06\cr 
+#' License: \tab GPL (>=2)\cr 
+#' LazyLoad: \tab yes\cr 
+#' }
 #' 
 #' (U, D) representation of generalized ellipsoids in \eqn{R^d}.
 #' 
@@ -36,8 +40,10 @@
 #' \code{\link{gell}} can currently generate the U-D representation from 5 ways
 #' of specifying an ellipsoid:
 #' 
-#' \enumerate{ \item From the non-negative definite dispersion (variance)
-#' matrix, Sigma: U D^2 U' = Sigma, where some elements of the diagonal matrix
+#' \enumerate{ 
+#' \item From the non-negative definite dispersion (variance)
+#' matrix, Sigma: U D^2 U' = Sigma, 
+#' where some elements of the diagonal matrix
 #' D can be 0. This can only generate bounded ellipsoids, possibly flat.
 #' 
 #' \item From the non-negative definite inner product matrix 'ip': U W^2 U = C
@@ -57,7 +63,8 @@
 #' factors corresponding to columns of A. These factors can be 0, positive or
 #' Inf. In this case U and D are such that U D(Unit sphere) = A diag(d)(Unit
 #' sphere). This is the only representation that can be used for all forms of
-#' ellipsoids and in which any ellipsoid can be represented. }
+#' ellipsoids and in which any ellipsoid can be represented. 
+#' }
 #' 
 #' @name gellipsoid-package
 #' @aliases gellipsoid-package gellipsoid
@@ -66,9 +73,9 @@
 #' 
 #' Maintainer: Michael Friendly <friendly@@yorku.ca>
 #' @seealso None yet %~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-#' @references Friendly, M., Monette, G. and Fox, J. (2012). Elliptical
+#' @references Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
 #' Insights: Understanding Statistical Methods through Elliptical Geometry.
-#' Under review.
+#' \bold{28}(1), 1-39.
 #' @keywords package
 #' @examples
 #' 

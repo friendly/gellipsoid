@@ -37,28 +37,30 @@
 #' ellipsoids and in which any ellipsoid can be represented. }
 #' 
 #' @aliases gell gell.default gell.gell
-#' @param x An object
+#' @param x      An object
 #' @param center A vector specifying the center of the ellipsoid
-#' @param Sigma A square, symmetric, non-negative definite dispersion
-#' (variance) matrix
-#' @param ip A square, symmetric, non-negative definite inner product matrix.
+#' @param Sigma  A square, symmetric, non-negative definite dispersion
+#'               (variance) matrix
+#' @param ip     A square, symmetric, non-negative definite inner product matrix.
 #' See Details.
-#' @param span A subspace with a given span.  See Details.
-#' @param A A matrix giving a linear transformation of the unit sphere.
-#' @param u A U matrix
-#' @param d Diagonal elements of a D matrix
+#' @param span   A subspace with a given span.  See Details.
+#' @param A      A matrix giving a linear transformation of the unit sphere.
+#' @param u      A U matrix
+#' @param d      Diagonal elements of a D matrix
 #' @param epsfac Factor of \code{.Machine$double.eps} used to distinguish zero
-#' vs. positive singular values
+#'               vs. positive singular values
 #' @param \dots Other arguments
-#' @return A (U, D) representation of the ellipsoid, with components %% If it
-#' is a LIST, use \item{center}{center} \item{u}{Right singular vectors}
+#' @return A     (U, D) representation of the ellipsoid, with components 
+#'               \item{center}{center} 
+#'               \item{u}{Right singular vectors}
 #' \item{d}{Singular values} %% ...
 #' @author Georges Monette
 #' @seealso \code{\link{dual}}, \code{\link{gmult}}, \code{\link{signature}},
-#' @references Friendly, M., Monette, G. and Fox, J. (2012). Elliptical
+#' @references Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
 #' Insights: Understanding Statistical Methods through Elliptical Geometry.
-#' \emph{Statistical Science}
+#' \emph{Statistical Science}, \bold{28}(1), 1-39.
 #' @keywords dplot multivariate
+#' @export
 #' @examples
 #' 
 #' # None yet

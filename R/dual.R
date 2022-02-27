@@ -20,6 +20,7 @@
 #' @references Dempster, A. (1969). \emph{Elements of Continuous Multivariate
 #' Analysis} Reading, MA: Addison-Wesley.
 #' @keywords aplot
+#' @export
 #' @examples
 #' 
 #' (zplane <- gell(span = diag(3)[,1:2]))  # a plane

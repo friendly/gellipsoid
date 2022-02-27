@@ -5,15 +5,16 @@
 #' D) representation
 #' 
 #' 
-#' @param G A class \code{"gell"} objects
-#' @return A vector of length 3, with named components \code{pos}, \code{zero}
-#' and \code{inf} 
+#' @param G   A class \code{"gell"} objects
+#' @return    A vector of length 3, with named components \code{pos}, \code{zero}
+#'            and \code{inf} 
 #' @author Georges Monette
 #' @seealso \code{\link{isbounded}}
-#' @references Friendly, M., Monette, G. and Fox, J. (2012). Elliptical
+#' @references Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
 #' Insights: Understanding Statistical Methods through Elliptical Geometry.
-#' Under review.
+#' \emph{Statistical Science}, \bold{28}(1), 1-39.
 #' @keywords dplot
+#' @export
 #' @examples
 #' 
 #' (zsph <- gell(diag(3)))  # unit sphere in R^3

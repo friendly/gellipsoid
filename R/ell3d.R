@@ -46,8 +46,10 @@
 #'                2, 3, 0,
 #'                0, 0, 0), 3,3)
 #' 
-#' E2 <- ell3d( zell2 <-gell( center = c2, Sigma = C2), col = 'red', alpha = 0.25, wire = TRUE)
-#' E2I <- ell3d( dual(gell( center = c2, Sigma = C2)), length=3, col = 'red', alpha = 0.25, wire = TRUE )
+#' E2 <- ell3d( zell2 <-gell( center = c2, Sigma = C2), 
+#'              col = 'red', alpha = 0.25, wire = TRUE)
+#' E2I <- ell3d( dual(gell( center = c2, Sigma = C2)), 
+#'              length=3, col = 'red', alpha = 0.25, wire = TRUE )
 #' 
 #' # signatures
 #' signature(zell1)

@@ -24,7 +24,9 @@
 #' 
 #' dual(zplane)  # orthogonal line
 #' (zplane2 <- gmult( cbind( c(1,1,1), c(1,-1,0), c(1,0,-1)), zplane))
-#' (zplane3 <- gmult( cbind( c(1,0,0), c(1,0,0), c(0,0,1)), zplane)) # correctly wipes out one dimension
+#'
+#' # correctly wipes out one dimension
+#' (zplane3 <- gmult( cbind( c(1,0,0), c(1,0,0), c(0,0,1)), zplane)) 
 #' 
 #' 
 gmult <-

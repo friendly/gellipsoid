@@ -102,7 +102,7 @@ Insights: Understanding Statistical Methods through Elliptical Geometry.
 None yet %~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
 }
 \author{
-Georges Monette
+Georges Monette and Michael Friendly
 
 Maintainer: Michael Friendly <friendly@yorku.ca>
 }

@@ -7,6 +7,18 @@
 \title{Plot Generalized Ellipsoids in 3D using rgl}
 \usage{
 ell3d(x, ...)
+
+\method{ell3d}{default}(x, shape, radius = 1, segments = 40, shade = TRUE, wire = FALSE, ...)
+
+\method{ell3d}{gell}(
+  x,
+  length = 10,
+  sides = 30,
+  segments = 40,
+  shade = TRUE,
+  wire = FALSE,
+  ...
+)
 }
 \arguments{
 \item{x}{A vector of length 3 giving the center of the ellipsoid for the
@@ -37,7 +49,8 @@ Returns the result of the call to \code{\link{ellipsoid}}
 }
 \description{
 \code{ell3d} is a convenience wrapper for \code{\link{ellipsoid}}
-specialized for class \code{"gell"} objects.
+specialized for class \code{"gell"} objects. It plots an
+ellipsoid in the current rgl window.
 }
 \note{
 This implementation is subject to change.
@@ -63,8 +76,10 @@ C2 <- matrix(c(6, 2, 0,
                2, 3, 0,
                0, 0, 0), 3,3)
 
-E2 <- ell3d( zell2 <-gell( center = c2, Sigma = C2), col = 'red', alpha = 0.25, wire = TRUE)
-E2I <- ell3d( dual(gell( center = c2, Sigma = C2)), length=3, col = 'red', alpha = 0.25, wire = TRUE )
+E2 <- ell3d( zell2 <-gell( center = c2, Sigma = C2), 
+             col = 'red', alpha = 0.25, wire = TRUE)
+E2I <- ell3d( dual(gell( center = c2, Sigma = C2)), 
+             length=3, col = 'red', alpha = 0.25, wire = TRUE )
 
 # signatures
 signature(zell1)

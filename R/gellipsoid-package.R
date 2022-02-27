@@ -69,10 +69,12 @@
 #' @name gellipsoid-package
 #' @aliases gellipsoid-package gellipsoid
 #' @docType package
-#' @author Georges Monette
+#' @author Georges Monette and Michael Friendly
 #' 
 #' Maintainer: Michael Friendly <friendly@@yorku.ca>
 #' @seealso None yet %~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
+#' 
+#' @import rgl
 #' @references Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
 #' Insights: Understanding Statistical Methods through Elliptical Geometry.
 #' \emph{Statistical Science}, \bold{28}(1), 1-39.

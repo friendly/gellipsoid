@@ -1,7 +1,8 @@
 #' Plot Generalized Ellipsoids in 3D using rgl
 #' 
 #' \code{ell3d} is a convenience wrapper for \code{\link{ellipsoid}}
-#' specialized for class \code{"gell"} objects.
+#' specialized for class \code{"gell"} objects. It plots an
+#' ellipsoid in the current rgl window.
 #' 
 #' 
 #' @aliases ell3d ell3d.default ell3d.gell
@@ -58,6 +59,11 @@
 #' 
 ell3d <- function(x, ...) UseMethod("ell3d")
 
+#' Default ell3d method
+#'
+#' @export
+#' @rdname ell3d
+#'  
 ell3d.default <- function(x, 
                           shape, 
                           radius=1, 
@@ -70,6 +76,11 @@ ell3d.default <- function(x,
   invisible(E)
 }
 
+#' ell3d method for generalized ellipsoid gell objects
+#' 
+#' @export
+#' @rdname ell3d
+#'  
 ell3d.gell <- function( x, 
                         length = 10, 
                         sides = 30, 

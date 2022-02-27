@@ -3,10 +3,11 @@ Type: Package
 Title: Generalized ellipsoids
 Version: 0.7.0
 Date: 2020-02-26
-Author: Georges Monette and Michael Friendly
+Author: Georges Monette [aut],
+        Michael Friendly [aut, cre]
 Maintainer: Michael Friendly <friendly@yorku.ca>
-Description: Represents generalized ellipsoids with the "(U,D)" representation, allowing degenerate
-	and/or unbounded ellipsoids, together with methods for linear and duality transformations, and for plotting 
+Description: Represent generalized ellipsoids with the "(U,D)" representation. It allows degenerate
+	and/or unbounded ellipsoids, together with methods for linear and duality transformations, and for plotting. 
 Depends: rgl
 URL: http://datavis.ca/papers/ellipses
 License: GPL (>= 2)

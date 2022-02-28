@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# gellipsoid
+# gellipsoid: Generalized ellipsoids
 
 <!-- badges: start -->
 
@@ -85,12 +85,162 @@ devtools::install_github("friendly/gellipsoid")
 
 ## Example
 
+#### Properties of generalized ellipsoids
+
+The following examples illustrate `gell` objects and their properties.
+Each of these may be plotted in 3D using `ell3d()`. These objects can be
+specified in a variety of ways, but for these examples the span is
+simplest.
+
+A unit sphere in *R*<sup>3</sup> has a central matrix of the identity
+matrix.
+
 ``` r
 library(gellipsoid)
-#> Warning: package 'rgl' was built under R version 4.0.5
+(zsph <- gell(diag(3)))  # a unit sphere in R^3
+#> $center
+#> [1] 0 0 0
+#> 
+#> $u
+#>      [,1] [,2] [,3]
+#> [1,]    0    0    1
+#> [2,]    0    1    0
+#> [3,]    1    0    0
+#> 
+#> $d
+#> [1] 1 1 1
+#> 
+#> attr(,"class")
+#> [1] "gell"
+signature(zsph)
+#>  pos zero  inf 
+#>    3    0    0
+isBounded(zsph)
+#> [1] TRUE
+isFlat(zsph)
+#> [1] FALSE
+```
+
+A plane in *R*<sup>3</sup> is flat in one dimension.
+
+``` r
+(zplane <- gell(span = diag(3)[, 1:2]))  # a plane
+#> $center
+#> [1] 0 0 0
+#> 
+#> $u
+#>      [,1] [,2] [,3]
+#> [1,]    1    0    0
+#> [2,]    0    1    0
+#> [3,]    0    0    1
+#> 
+#> $d
+#> [1] Inf Inf   0
+#> 
+#> attr(,"class")
+#> [1] "gell"
+signature(zplane)
+#>  pos zero  inf 
+#>    0    1    2
+isBounded(zplane)
+#> [1] FALSE
+isFlat(zplane)
+#> [1] TRUE
+
+dual(zplane)  # line orthogonal to that plane
+#> $center
+#> [1] 0 0 0
+#> 
+#> $u
+#>      [,1] [,2] [,3]
+#> [1,]    0    0    1
+#> [2,]    0    1    0
+#> [3,]    1    0    0
+#> 
+#> $d
+#> [1] Inf   0   0
+#> 
+#> attr(,"class")
+#> [1] "gell"
+signature(dual(zplane))
+#>  pos zero  inf 
+#>    0    2    1
+```
+
+A hyperplane. Note that the `gell` object with a center contains more
+information than the geometric plane.
+
+``` r
+(zhplane <- gell(center = c(0, 0, 2), 
+                 span = diag(3)[, 1:2]))  # a hyperplane
+#> $center
+#> [1] 0 0 2
+#> 
+#> $u
+#>      [,1] [,2] [,3]
+#> [1,]    1    0    0
+#> [2,]    0    1    0
+#> [3,]    0    0    1
+#> 
+#> $d
+#> [1] Inf Inf   0
+#> 
+#> attr(,"class")
+#> [1] "gell"
+signature(zhplane)
+#>  pos zero  inf 
+#>    0    1    2
+
+dual(zhplane)  # orthogonal line through same center
+#> $center
+#> [1] 0 0 2
+#> 
+#> $u
+#>      [,1] [,2] [,3]
+#> [1,]    0    0    1
+#> [2,]    0    1    0
+#> [3,]    1    0    0
+#> 
+#> $d
+#> [1] Inf   0   0
+#> 
+#> attr(,"class")
+#> [1] "gell"
+```
+
+A point:
+
+``` r
+zorigin <- gell(span = cbind(c(0, 0, 0)))
+signature(zorigin)
+#>  pos zero  inf 
+#>    0    3    0
+
+# what is the dual (inverse) of a point?
+dual(zorigin)
+#> $center
+#> [1] 0 0 0
+#> 
+#> $u
+#>      [,1] [,2] [,3]
+#> [1,]    0    0    1
+#> [2,]    0    1    0
+#> [3,]    1    0    0
+#> 
+#> $d
+#> [1] Inf Inf Inf
+#> 
+#> attr(,"class")
+#> [1] "gell"
+
+signature(dual(zorigin))
+#>  pos zero  inf 
+#>    0    0    3
 ```
 
 <!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>. -->
+
+#### Drawing generalized ellipsoids
 
 The following figure shows views of two generalized ellipsoids.
 *C*<sub>1</sub> (blue) determines a proper, fat ellipsoid; it’s inverse
@@ -108,7 +258,7 @@ knitr::include_graphics("man/figures/gell3d-1.png")
 <img src="man/figures/gell3d-1.png" width="60%" />
 
 This figure illustrates the orthogonality of each *C* and its dual,
-$C^{-1}.
+*C*<sup>−1</sup>.
 
 ``` r
 knitr::include_graphics("man/figures/gell3d-4.png")

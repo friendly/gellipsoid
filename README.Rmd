@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# gellipsoid
+# gellipsoid: Generalized ellipsoids
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
@@ -85,14 +85,63 @@ devtools::install_github("friendly/gellipsoid")
 
 ## Example
 
+#### Properties of generalized ellipsoids
+The following examples illustrate `gell` objects and their properties. Each of these may be plotted in 3D
+using `ell3d()`.  These objects can be specified in a variety of ways, but for these examples the span
+is simplest.
 
-```{r example}
+A unit sphere in $R^3$ has a central matrix of the identity matrix.
+```{r ex1}
 library(gellipsoid)
+(zsph <- gell(diag(3)))  # a unit sphere in R^3
+signature(zsph)
+isBounded(zsph)
+isFlat(zsph)
 ```
+
+A plane in $R^3$ is flat in one dimension.
+
+```{r ex2}
+(zplane <- gell(span = diag(3)[, 1:2]))  # a plane
+signature(zplane)
+isBounded(zplane)
+isFlat(zplane)
+
+dual(zplane)  # line orthogonal to that plane
+signature(dual(zplane))
+
+```
+
+A hyperplane. Note that the `gell` object with a center contains more information than
+the geometric plane.
+
+```{r ex3}
+(zhplane <- gell(center = c(0, 0, 2), 
+                 span = diag(3)[, 1:2]))  # a hyperplane
+signature(zhplane)
+
+dual(zhplane)  # orthogonal line through same center
+
+```
+
+A point:
+
+```{r}
+zorigin <- gell(span = cbind(c(0, 0, 0)))
+signature(zorigin)
+
+# what is the dual (inverse) of a point?
+dual(zorigin)
+
+signature(dual(zorigin))
+
+```
+
 
 
 <!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>. -->
 
+#### Drawing generalized ellipsoids
 
 The following figure shows views of two generalized ellipsoids.
 $C_1$ (blue) determines a proper, fat ellipsoid; it's inverse $C_1^{-1}$ also generates a proper ellipsoid.
@@ -105,7 +154,8 @@ The scale of these ellipsoids is defined by the gray unit sphere.
 knitr::include_graphics("man/figures/gell3d-1.png")
 ```
 
-This figure illustrates the orthogonality of each $C$ and its dual, $C^{-1}. 
+
+This figure illustrates the orthogonality of each $C$ and its dual, $C^{-1}$. 
 ```{r}
 knitr::include_graphics("man/figures/gell3d-4.png")
 ```

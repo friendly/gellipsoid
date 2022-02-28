@@ -15,7 +15,7 @@
 #' in \eqn{R^p} with empty interior.
 #' 
 #' 
-#' @aliases isBounded isBounded.gell isFat isFat.gell isFlat isUnbounded
+#' @aliases isBounded isBounded.gell isFat isFat.gell isFlat isFlat.gell isUnbounded isUnboundede.gell
 #' @param x A class \code{"gell"} object
 #' @param   \dots Other arguments, not used.
 #' @return  TRUE or FALSE
@@ -36,6 +36,10 @@ function(x,...) UseMethod('isBounded')
 #' @rdname isBounded
 #' @export
 isBounded.gell <- function(x,...) all( is.finite(x$d))
+
+#  @method isFat gell
+#  @method isFlat gell
+#  @method isUnbounded gell
 
 #' @rdname isBounded
 #' @export

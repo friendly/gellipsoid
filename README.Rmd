@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The gellipsoid package extends the class of ellipsoids to "generalized ellipsoids" to degenerate ellipsoids that are flat and/or unbounded. Thus, ellipsoids can be naturally defined to include lines, hyperplanes, points, cylinders, etc.
+The gellipsoid package extends the class of ellipsoids to "generalized ellipsoids", which are degenerate ellipsoids that are flat and/or unbounded. Thus, ellipsoids can be naturally defined to include lines, hyperplanes, points, cylinders, etc.
 The methods can be used to represent generalized ellipsoids in a $d$-dimensional space
 $\mathcal{R}^d$, with plots in up to 3D.
 
@@ -40,7 +40,7 @@ its elements can be 0, Inf or a positive real.
 
 #### Definitions
 
-A _proper_ ellipsoid in $\mathcal{R}^d$ can be defined by $\mathcal{E := {x : x^T \mathbf{C} x \le 1 }}$
+A _proper_ ellipsoid in $\mathcal{R}^d$ can be defined by $\mathcal{E := \{x : x^T \mathbf{C} x \le 1 \}}$
 where $\mathbf{C}$ is a non-negative definite central matrix, 
 In applications, $\mathbf{C}$ is typically a variance-covariance matrix
 A proper ellipsoid is _bounded_, with a non-empty interior.
@@ -49,13 +49,13 @@ We call these **fat** ellipsoids.
 A degenerate _flat_ ellipsoid corresponds to one where the central matrix $\mathbf{C}$ is singular
 or when there are one or more zero singular values in $\mathbf{D}$.
 In 3D, a generalized ellipsoid that is flat in one dimension 
-($\mathbf{D} = \mathrm{diag} {X, X, 0}$) collapses to an ellipse;
-one that is flat in two dimensions ($\mathbf{D} = \mathrm{diag} {X, 0, 0}$)
+($\mathbf{D} = \mathrm{diag} \{X, X, 0\}$) collapses to an ellipse;
+one that is flat in two dimensions ($\mathbf{D} = \mathrm{diag} \{X, 0, 0\}$)
 collapses to a line, and one that is flat in three dimensions collapses to a point.
 
 An _unbounded_ ellipsoid is one that has infinite extent in one or more directions,
-and is characterized by infinite singular values in $\mathbf{D}}.
-for example, in 3D, an unbounded ellipsoid with one infinite singular value is
+and is characterized by infinite singular values in $\mathbf{D}$.
+For example, in 3D, an unbounded ellipsoid with one infinite singular value is
 an infinite cylinder of elliptical cross-section.
 
 ## Principal functions
@@ -85,11 +85,9 @@ devtools::install_github("friendly/gellipsoid")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(gellipsoid)
-## basic example code
 ```
 
 

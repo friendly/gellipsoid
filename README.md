@@ -10,11 +10,11 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 The gellipsoid package extends the class of ellipsoids to “generalized
-ellipsoids” to degenerate ellipsoids that are flat and/or unbounded.
-Thus, ellipsoids can be naturally defined to include lines, hyperplanes,
-points, cylinders, etc. The methods can be used to represent generalized
-ellipsoids in a *d*-dimensional space ℛ<sup>*d*</sup>, with plots in up
-to 3D.
+ellipsoids”, which are degenerate ellipsoids that are flat and/or
+unbounded. Thus, ellipsoids can be naturally defined to include lines,
+hyperplanes, points, cylinders, etc. The methods can be used to
+represent generalized ellipsoids in a *d*-dimensional space
+ℛ<sup>*d*</sup>, with plots in up to 3D.
 
 <!-- The motivation for this more general representation is to allow a notation for a class of generalized ellipsoids -->
 <!-- that is algebraically closed under -->
@@ -35,22 +35,22 @@ elements can be 0, Inf or a positive real.
 #### Definitions
 
 A *proper* ellipsoid in ℛ<sup>*d*</sup> can be defined by
-ℰ := 𝓍 : 𝓍<sup>𝒯</sup>**C**𝓍 ≤ 1 where **C** is a non-negative definite
-central matrix, In applications, **C** is typically a
+ℰ := {𝓍 : 𝓍<sup>𝒯</sup>**C**𝓍 ≤ 1} where **C** is a non-negative
+definite central matrix, In applications, **C** is typically a
 variance-covariance matrix A proper ellipsoid is *bounded*, with a
 non-empty interior. We call these **fat** ellipsoids.
 
 A degenerate *flat* ellipsoid corresponds to one where the central
 matrix **C** is singular or when there are one or more zero singular
 values in **D**. In 3D, a generalized ellipsoid that is flat in one
-dimension (**D** = diag*X*, *X*, 0) collapses to an ellipse; one that is
-flat in two dimensions (**D** = diag*X*, 0, 0) collapses to a line, and
-one that is flat in three dimensions collapses to a point.
+dimension (**D** = diag{*X*, *X*, 0}) collapses to an ellipse; one that
+is flat in two dimensions (**D** = diag{*X*, 0, 0}) collapses to a line,
+and one that is flat in three dimensions collapses to a point.
 
 An *unbounded* ellipsoid is one that has infinite extent in one or more
-directions, and is characterized by infinite singular values in $}. for
-example, in 3D, an unbounded ellipsoid with one infinite singular value
-is an infinite cylinder of elliptical cross-section.
+directions, and is characterized by infinite singular values in **D**.
+For example, in 3D, an unbounded ellipsoid with one infinite singular
+value is an infinite cylinder of elliptical cross-section.
 
 ## Principal functions
 
@@ -85,11 +85,9 @@ devtools::install_github("friendly/gellipsoid")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
 ``` r
 library(gellipsoid)
-## basic example code
+#> Warning: package 'rgl' was built under R version 4.0.5
 ```
 
 <!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>. -->

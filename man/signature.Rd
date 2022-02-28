@@ -46,7 +46,7 @@ Insights: Understanding Statistical Methods through Elliptical Geometry.
 \emph{Statistical Science}, \bold{28}(1), 1-39.
 }
 \seealso{
-\code{\link{isbounded}}
+\code{\link{isBounded}}
 }
 \author{
 Georges Monette

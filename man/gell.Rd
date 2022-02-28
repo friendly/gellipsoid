@@ -58,17 +58,17 @@ specifying an ellipsoid:
 
 \enumerate{ 
 \item From the non-negative definite dispersion (variance)
-matrix, Sigma: U D^2 U' = Sigma, where some elements of the diagonal matrix
+matrix, \eqn{Sigma: U D^2 U' = Sigma}, where some elements of the diagonal matrix
 D can be 0. This can only generate bounded ellipsoids, possibly flat.
 
-\item From the non-negative definite inner product matrix 'ip': U W^2 U = C
+\item From the non-negative definite inner product matrix \eqn{'ip': U W^2 U = C}
 where some elements of the diagonal matrix W can be 0. Then set D = W^-1
 where 0^-1 = Inf. This can only generate fat (non-empty interior)
 ellipsoids, possibly unbounded.
 
 \item From a subspace spanned by 'span' Let U_1 be an orthonormal basis of
 Span('span'), let U_2 be an orthonormal basis of the orthogonal complement,
-the U = [ U_1 U_2 ] and D = diag( c(Inf,...,Inf, 0,..,0)) where the number
+the \eqn{U = [ U_1 U_2 ]} and \eqn{D = diag( c(Inf,...,Inf, 0,..,0))} where the number
 of Inf's is equal to the number of columns of U_1.
 
 \item From a transformation of the unit sphere given by A(Unit sphere) where

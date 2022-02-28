@@ -10,6 +10,8 @@ par3d.save(
   filename,
   dev = rgl.cur()
 )
+
+par3d.restore(parms, filename)
 }
 \arguments{
 \item{params}{A list of \code{par3d} parameters to save}

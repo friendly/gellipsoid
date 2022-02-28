@@ -17,7 +17,6 @@
 #' 
 #' @aliases par3d.restore par3d.save
 #' @param params   A list of \code{par3d} parameters to save
-#' @param parms    A list of \code{par3d} parameters to restore
 #' @param filename Name of a \code{.rds} file to save to or restore from
 #' @param dev     The rgl device.  Currently unused
 #' @return \code{par3d.save} returns a list with the current values of the
@@ -51,6 +50,9 @@ function (params = c("userMatrix", "scale", "zoom", "FOV"), filename, dev = rgl.
     invisible(parms)
 }
 
+#' @param parms    A list of \code{par3d} parameters to restore
+#' @rdname par3d.save
+#' @export
 par3d.restore <-
 function (parms, filename) {
     if(!missing(filename)) parms <- readRDS(file=filename)

@@ -9,7 +9,7 @@
 
 #' Save and Restore the par3d Parameters for an rgl Scene
 #' 
-#' Use to make a manually manipulated rgl view reproducible, within sessions or
+#' Use this function to make a manually manipulated rgl view reproducible, within sessions or
 #' across sessions. Within an R session, simply use \code{par3d.save} to record
 #' the \code{par3d} parameters for the view(s) to named objects. Across
 #' sessions, use the \code{filename} argument to save these to .rds files
@@ -18,7 +18,7 @@
 #' @aliases par3d.restore par3d.save
 #' @param params   A list of \code{par3d} parameters to save
 #' @param filename Name of a \code{.rds} file to save to or restore from
-#' @param dev     The rgl device.  Currently unused
+#' @param dev      The rgl device.  Currently unused
 #' @return \code{par3d.save} returns a list with the current values of the
 #' \code{par3d} parameters named in \code{params}. 
 #' @author Michael Friendly

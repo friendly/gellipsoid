@@ -27,7 +27,7 @@ par3d.restore(parms, filename)
 \code{par3d} parameters named in \code{params}.
 }
 \description{
-Use to make a manually manipulated rgl view reproducible, within sessions or
+Use this function to make a manually manipulated rgl view reproducible, within sessions or
 across sessions. Within an R session, simply use \code{par3d.save} to record
 the \code{par3d} parameters for the view(s) to named objects. Across
 sessions, use the \code{filename} argument to save these to .rds files

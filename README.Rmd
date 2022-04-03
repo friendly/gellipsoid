@@ -1,5 +1,10 @@
 ---
-output: github_document
+output:   
+  github_document:
+    math_method:
+      engine: webtex
+      url: http://chart.apis.google.com/chart?cht=tx&chl=
+always_allow_html: yes
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -41,7 +46,7 @@ its elements can be 0, Inf or a positive real.
 
 #### Definitions
 
-A _proper_ ellipsoid in $\mathbf{R}^d$ can be defined by $\mathbf{E} := \{x : x^T \mathbf{C} x \le 1 \}$
+A _proper_ ellipsoid in $\mathbf{R}^d$ can be defined by $\mathbf{E} := \{x \; : \; x^T \mathbf{C} x \le 1 \}$
 where $\mathbf{C}$ is a non-negative definite central matrix, 
 In applications, $\mathbf{C}$ is typically a variance-covariance matrix
 A proper ellipsoid is _bounded_, with a non-empty interior.

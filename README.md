@@ -15,9 +15,9 @@ ellipsoids”, which are degenerate ellipsoids that are flat and/or
 unbounded. Thus, ellipsoids can be naturally defined to include lines,
 hyperplanes, points, cylinders, etc. The methods can be used to
 represent generalized ellipsoids in a
-![d](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;d "d")-dimensional
+![d](http://chart.apis.google.com/chart?cht=tx&chl=d "d")-dimensional
 space
-![\\mathcal{R}^d](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathcal%7BR%7D%5Ed "\mathcal{R}^d"),
+![\\mathbf{R}^d](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BR%7D%5Ed "\mathbf{R}^d"),
 with plots in up to 3D.
 
 <!-- The motivation for this more general representation is to allow a notation for a class of generalized ellipsoids -->
@@ -25,64 +25,64 @@ with plots in up to 3D.
 
 The goal is to be able to think about, visualize, and compute a linear
 transformation of an ellipsoid with central matrix
-![\\mathbf{C}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BC%7D "\mathbf{C}")
+![\\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
 or its inverse
-![\\mathbf{C}^{-1}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BC%7D%5E%7B-1%7D "\mathbf{C}^{-1}")
+![\\mathbf{C}^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D%5E%7B-1%7D "\mathbf{C}^{-1}")
 which apply equally to unbounded and/or degenerate ellipsoids.
 
 The implementation uses a
-![(\\mathbf{U}, \\mathbf{D})](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%28%5Cmathbf%7BU%7D%2C%20%5Cmathbf%7BD%7D%29 "(\mathbf{U}, \mathbf{D})")
+![(\\mathbf{U}, \\mathbf{D})](http://chart.apis.google.com/chart?cht=tx&chl=%28%5Cmathbf%7BU%7D%2C%20%5Cmathbf%7BD%7D%29 "(\mathbf{U}, \mathbf{D})")
 representation, based on the singular value decomposition (SVD) of an
 ellipsoid-generating matrix,
-![\\mathbf{A} = \\mathbf{U} \\mathbf{D} \\mathbf{V}^{T}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BA%7D%20%3D%20%5Cmathbf%7BU%7D%20%5Cmathbf%7BD%7D%20%5Cmathbf%7BV%7D%5E%7BT%7D "\mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{V}^{T}"),
+![\\mathbf{A} = \\mathbf{U} \\mathbf{D} \\mathbf{V}^{T}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BA%7D%20%3D%20%5Cmathbf%7BU%7D%20%5Cmathbf%7BD%7D%20%5Cmathbf%7BV%7D%5E%7BT%7D "\mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{V}^{T}"),
 where
-![\\mathbf{U}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BU%7D "\mathbf{U}")
+![\\mathbf{U}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BU%7D "\mathbf{U}")
 is square orthogonal and
-![\\mathbf{D}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BD%7D "\mathbf{D}")
+![\\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
 is diagonal. For the usual, “proper” ellipsoids,
-![\\mathbf{A}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BA%7D "\mathbf{A}")
+![\\mathbf{A}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BA%7D "\mathbf{A}")
 is positive-definite so all elements of
-![\\mathbf{D}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BD%7D "\mathbf{D}")
+![\\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
 are positive. In generalized ellipsoids,
-![\\mathbf{D}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BD%7D "\mathbf{D}")
+![\\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
 is extended to non-negative real numbers, i.e.  its elements can be 0,
 Inf or a positive real.
 
 #### Definitions
 
 A *proper* ellipsoid in
-![\\mathcal{R}^d](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathcal%7BR%7D%5Ed "\mathcal{R}^d")
+![\\mathbf{R}^d](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BR%7D%5Ed "\mathbf{R}^d")
 can be defined by
-![\\mathcal{E} := \\{x : x^T \\mathbf{C} x \\le 1 \\}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathcal%7BE%7D%20%3A%3D%20%5C%7Bx%20%3A%20x%5ET%20%5Cmathbf%7BC%7D%20x%20%5Cle%201%20%5C%7D "\mathcal{E} := \{x : x^T \mathbf{C} x \le 1 \}")
+![\\mathbf{E} := \\{x \\; : \\; x^T \\mathbf{C} x \\le 1 \\}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BE%7D%20%3A%3D%20%5C%7Bx%20%5C%3B%20%3A%20%5C%3B%20x%5ET%20%5Cmathbf%7BC%7D%20x%20%5Cle%201%20%5C%7D "\mathbf{E} := \{x \; : \; x^T \mathbf{C} x \le 1 \}")
 where
-![\\mathbf{C}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BC%7D "\mathbf{C}")
+![\\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
 is a non-negative definite central matrix, In applications,
-![\\mathbf{C}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BC%7D "\mathbf{C}")
+![\\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
 is typically a variance-covariance matrix A proper ellipsoid is
 *bounded*, with a non-empty interior. We call these **fat** ellipsoids.
 
 A degenerate *flat* ellipsoid corresponds to one where the central
 matrix
-![\\mathbf{C}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BC%7D "\mathbf{C}")
+![\\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
 is singular or when there are one or more zero singular values in
-![\\mathbf{D}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BD%7D "\mathbf{D}").
+![\\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}").
 In 3D, a generalized ellipsoid that is flat in one dimension
-(![\\mathbf{D} = \\mathrm{diag} \\{X, X, 0\\}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BD%7D%20%3D%20%5Cmathrm%7Bdiag%7D%20%5C%7BX%2C%20X%2C%200%5C%7D "\mathbf{D} = \mathrm{diag} \{X, X, 0\}"))
+(![\\mathbf{D} = \\mathrm{diag} \\{X, X, 0\\}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D%20%3D%20%5Cmathrm%7Bdiag%7D%20%5C%7BX%2C%20X%2C%200%5C%7D "\mathbf{D} = \mathrm{diag} \{X, X, 0\}"))
 collapses to an ellipse; one that is flat in two dimensions
-(![\\mathbf{D} = \\mathrm{diag} \\{X, 0, 0\\}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BD%7D%20%3D%20%5Cmathrm%7Bdiag%7D%20%5C%7BX%2C%200%2C%200%5C%7D "\mathbf{D} = \mathrm{diag} \{X, 0, 0\}"))
+(![\\mathbf{D} = \\mathrm{diag} \\{X, 0, 0\\}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D%20%3D%20%5Cmathrm%7Bdiag%7D%20%5C%7BX%2C%200%2C%200%5C%7D "\mathbf{D} = \mathrm{diag} \{X, 0, 0\}"))
 collapses to a line, and one that is flat in three dimensions collapses
 to a point.
 
 An *unbounded* ellipsoid is one that has infinite extent in one or more
 directions, and is characterized by infinite singular values in
-![\\mathbf{D}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BD%7D "\mathbf{D}").
+![\\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}").
 For example, in 3D, an unbounded ellipsoid with one infinite singular
 value is an infinite cylinder of elliptical cross-section.
 
 ## Principal functions
 
 -   `gell()` Constructs a generalized ellipsoid using the
-    ![(\\mathbf{U}, \\mathbf{D})](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%28%5Cmathbf%7BU%7D%2C%20%5Cmathbf%7BD%7D%29 "(\mathbf{U}, \mathbf{D})")
+    ![(\\mathbf{U}, \\mathbf{D})](http://chart.apis.google.com/chart?cht=tx&chl=%28%5Cmathbf%7BU%7D%2C%20%5Cmathbf%7BD%7D%29 "(\mathbf{U}, \mathbf{D})")
     representation. The inputs can be specified in a variety of ways:
 
     -   a non-negative definite variance matrix;
@@ -121,8 +121,8 @@ specified in a variety of ways, but for these examples the span is
 simplest.
 
 A unit sphere in
-![R^3](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%5E3 "R^3")
-has a central matrix of the identity matrix.
+![R^3](http://chart.apis.google.com/chart?cht=tx&chl=R%5E3 "R^3") has a
+central matrix of the identity matrix.
 
 ``` r
 library(gellipsoid)
@@ -151,8 +151,8 @@ isFlat(zsph)
 ```
 
 A plane in
-![R^3](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;R%5E3 "R^3")
-is flat in one dimension.
+![R^3](http://chart.apis.google.com/chart?cht=tx&chl=R%5E3 "R^3") is
+flat in one dimension.
 
 ``` r
 (zplane <- gell(span = diag(3)[, 1:2]))  # a plane
@@ -274,27 +274,26 @@ signature(dual(zorigin))
 #### Drawing generalized ellipsoids
 
 The following figure shows views of two generalized ellipsoids.
-![C_1](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;C_1 "C_1")
-(blue) determines a proper, fat ellipsoid; it’s inverse
-![C_1^{-1}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;C_1%5E%7B-1%7D "C_1^{-1}")
+![C_1](http://chart.apis.google.com/chart?cht=tx&chl=C_1 "C_1") (blue)
+determines a proper, fat ellipsoid; it’s inverse
+![C_1^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=C_1%5E%7B-1%7D "C_1^{-1}")
 also generates a proper ellipsoid.
-![C_2](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;C_2 "C_2")
-(red) determines an improper, fat ellipsoid, whose inverse
-![C_2^{-1}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;C_2%5E%7B-1%7D "C_2^{-1}")
+![C_2](http://chart.apis.google.com/chart?cht=tx&chl=C_2 "C_2") (red)
+determines an improper, fat ellipsoid, whose inverse
+![C_2^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=C_2%5E%7B-1%7D "C_2^{-1}")
 is an unbounded cylinder of elliptical cross-section.
-![C_2](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;C_2 "C_2")
-is the projection of
-![C_1](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;C_1 "C_1")
-onto the plane where
-![z = 0](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;z%20%3D%200 "z = 0").
+![C_2](http://chart.apis.google.com/chart?cht=tx&chl=C_2 "C_2") is the
+projection of
+![C_1](http://chart.apis.google.com/chart?cht=tx&chl=C_1 "C_1") onto the
+plane where
+![z = 0](http://chart.apis.google.com/chart?cht=tx&chl=z%20%3D%200 "z = 0").
 The scale of these ellipsoids is defined by the gray unit sphere.
 
 <img src="man/figures/gell3d-1.png" width="60%" />
 
 This figure illustrates the orthogonality of each
-![C](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;C "C")
-and its dual,
-![C^{-1}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;C%5E%7B-1%7D "C^{-1}").
+![C](http://chart.apis.google.com/chart?cht=tx&chl=C "C") and its dual,
+![C^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=C%5E%7B-1%7D "C^{-1}").
 <img src="man/figures/gell3d-4.png" width="60%" />
 
 ## References

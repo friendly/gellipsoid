@@ -9,7 +9,8 @@ Maintainer: Michael Friendly <friendly@yorku.ca>
 Description: Represent generalized ellipsoids with the "(U,D)" representation. It allows degenerate
 	and/or unbounded ellipsoids, together with methods for linear and duality transformations, and for plotting. 
 Depends: rgl
-URL: http://datavis.ca/papers/ellipses
+URL: https://github.com/friendly/gellipsoid
+Encoding: UTF-8
 License: GPL (>= 2)
 LazyLoad: yes
 Packaged: 2012-06-05 14:20:43 UTC; friendly

@@ -20,7 +20,7 @@ par3d('scale')
 
 E1I <- ell3d(dual(zell), col="blue", alpha=0.1, wire=TRUE)
 
-ell3d(gell(diag(3)), col = 'gray',alpha = .1, shade=FALSE, wire = TRUE) # Unit sphere
+ell3d(gell(Sigma = diag(3)), col = 'gray',alpha = .1, shade=FALSE, wire = TRUE) # Unit sphere
 
 # a singular ellipsoid
 c2 <- c1

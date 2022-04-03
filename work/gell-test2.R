@@ -21,7 +21,7 @@ text3d(.95*bb1, texts="C1", color="blue", adj=0)
 # inverse of C1
 
 E1I <- ell3d(dual(zell), col="blue", alpha=0.1, wire=TRUE)
-ell3d(gell(diag(3)), col = 'gray',alpha = .1, shade=FALSE, wire = TRUE) # Unit sphere
+ell3d(gell(Sigma = diag(3)), col = 'gray',alpha = .1, shade=FALSE, wire = TRUE) # Unit sphere
 
 # a singular ellipsoid
 c2 <- c1

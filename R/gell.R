@@ -53,7 +53,7 @@
 #' @return A     (U, D) representation of the ellipsoid, with components 
 #'               \item{center}{center} 
 #'               \item{u}{Right singular vectors}
-#' \item{d}{Singular values} %% ...
+#'               \item{d}{Singular values} %% ...
 #' @author Georges Monette
 #' @seealso \code{\link{dual}}, \code{\link{gmult}}, \code{\link{signature}},
 #' @references Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
@@ -67,11 +67,11 @@
 #' 
 #' (zplane <- gell(span = diag(3)[,1:2]))    # a plane
 #' 
-gell <- function(x,...) UseMethod("gell")
+gell <- function(x, ...) UseMethod("gell")
 
 #' @rdname gell
 #' @export
-gell.default <- function(center = 0, Sigma, ip, span , A, u, d=1, epsfac = 2){
+gell.default <- function(x, center = 0, Sigma, ip, span , A, u, d=1, epsfac = 2, ...){
   # 
   # U-D representation of an ellipsoid in R^d.
   # 
@@ -95,32 +95,6 @@ gell.default <- function(center = 0, Sigma, ip, span , A, u, d=1, epsfac = 2){
   # 
   # Ellipsoids that are both flat and unbounded correspond to lines, points, 
   # subspaces, hyperplanes, etc.
-  # 
-  # 'gell' can currently generate the U-D representation from 5 ways of
-  # specifying an ellipsoid:
-  # 
-  # 1) From the non-negative definite dispersion (variance) matrix, Sigma: U D^2
-  # U' = Sigma, where some elements of the diagonal matrix D can be 0. This can
-  # only generate bounded ellipsoids, possibly flat.
-  # 
-  # 2) From the non-negative definite inner product matrix 'ip': U W^2 U = C
-  # where some elements of the diagonal matrix W can be 0. Then set D = W^{-1}
-  # where 0^{-1} = Inf. This can only generate fat (non-empty interior)
-  # ellipsoids, possibly unbounded.
-  # 
-  # 3) From a subspace spanned by 'span' Let U_1 be an orthonormal basis of 
-  # Span('span'), let U_2 be an orthonormal basis of the orthogonal complement, 
-  # the U = [ U_1  U_2 ] and D = diag( c(Inf,...,Inf, 0,..,0)) where the number 
-  # of Inf's is equal to the number of columns of U_1.
-  # 
-  # 4) From a transformation of the unit sphere given by A(Unit sphere) where 
-  # A = UDV', i.e. the SVD.
-  # 
-  # 5) (Generalization of 4): A, d where A is any matrix and d is a vector of 
-  # factors corresponding to columns of A. These factors can be 0, positive or
-  # Inf. In this case U and D are such that U D(Unit sphere) = A diag(d)(Unit
-  # sphere). This is the only representation that can be used for all forms of
-  # ellipsoids and in which any ellipsoid can be represented.
   # 
   # 
   if( nargs() == 0) {

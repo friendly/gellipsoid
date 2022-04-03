@@ -93,7 +93,7 @@ is simplest.
 A unit sphere in $R^3$ has a central matrix of the identity matrix.
 ```{r ex1}
 library(gellipsoid)
-(zsph <- gell(diag(3)))  # a unit sphere in R^3
+(zsph <- gell(Sigma = diag(3)))  # a unit sphere in R^3
 signature(zsph)
 isBounded(zsph)
 isFlat(zsph)
@@ -150,13 +150,13 @@ cross-section.
 $C_2$ is the projection of $C_1$ onto the plane where $z = 0$.
 The scale of these ellipsoids is defined by the gray unit sphere.
 
-```{r}
+```{r, echo=FALSE}
 knitr::include_graphics("man/figures/gell3d-1.png")
 ```
 
 
 This figure illustrates the orthogonality of each $C$ and its dual, $C^{-1}$. 
-```{r}
+```{r, echo=FALSE}
 knitr::include_graphics("man/figures/gell3d-4.png")
 ```
 

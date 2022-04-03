@@ -8,7 +8,7 @@
 \usage{
 gell(x, ...)
 
-\method{gell}{default}(center = 0, Sigma, ip, span, A, u, d = 1, epsfac = 2)
+\method{gell}{default}(x, center = 0, Sigma, ip, span, A, u, d = 1, epsfac = 2, ...)
 
 \method{gell}{gell}(x, ...)
 }
@@ -40,7 +40,7 @@ vs. positive singular values}
 A     (U, D) representation of the ellipsoid, with components 
               \item{center}{center} 
               \item{u}{Right singular vectors}
-\item{d}{Singular values} %% ...
+              \item{d}{Singular values} %% ...
 }
 \description{
 \code{gell} provides a set of ways to specify a generalized ellipsoid in

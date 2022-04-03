@@ -17,7 +17,7 @@
 #' @export
 #' @examples
 #' 
-#' (zsph <- gell(diag(3)))  # unit sphere in R^3
+#' (zsph <- gell(Sigma = diag(3)))  # unit sphere in R^3
 #' 
 #' (zplane <- gell(span = diag(3)[,1:2]))  # a plane
 #' 

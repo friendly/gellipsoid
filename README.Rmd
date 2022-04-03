@@ -18,11 +18,12 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
 <!-- badges: end -->
 
 The gellipsoid package extends the class of ellipsoids to "generalized ellipsoids", which are degenerate ellipsoids that are flat and/or unbounded. Thus, ellipsoids can be naturally defined to include lines, hyperplanes, points, cylinders, etc.
 The methods can be used to represent generalized ellipsoids in a $d$-dimensional space
-$\mathcal{R}^d$, with plots in up to 3D.
+$\mathbf{R}^d$, with plots in up to 3D.
 
 <!-- The motivation for this more general representation is to allow a notation for a class of generalized ellipsoids -->
 <!-- that is algebraically closed under -->
@@ -40,7 +41,7 @@ its elements can be 0, Inf or a positive real.
 
 #### Definitions
 
-A _proper_ ellipsoid in $\mathcal{R}^d$ can be defined by $\mathcal{E := \{x : x^T \mathbf{C} x \le 1 \}}$
+A _proper_ ellipsoid in $\mathbf{R}^d$ can be defined by $\mathbf{E} := \{x : x^T \mathbf{C} x \le 1 \}$
 where $\mathbf{C}$ is a non-negative definite central matrix, 
 In applications, $\mathbf{C}$ is typically a variance-covariance matrix
 A proper ellipsoid is _bounded_, with a non-empty interior.

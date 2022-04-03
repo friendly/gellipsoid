@@ -7,6 +7,7 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
 <!-- badges: end -->
 
 The gellipsoid package extends the class of ellipsoids to “generalized
@@ -52,7 +53,7 @@ Inf or a positive real.
 A *proper* ellipsoid in
 ![\\mathcal{R}^d](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathcal%7BR%7D%5Ed "\mathcal{R}^d")
 can be defined by
-![\\mathcal{E := \\{x : x^T \\mathbf{C} x \\le 1 \\}}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathcal%7BE%20%3A%3D%20%5C%7Bx%20%3A%20x%5ET%20%5Cmathbf%7BC%7D%20x%20%5Cle%201%20%5C%7D%7D "\mathcal{E := \{x : x^T \mathbf{C} x \le 1 \}}")
+![\\mathcal{E} := \\{x : x^T \\mathbf{C} x \\le 1 \\}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathcal%7BE%7D%20%3A%3D%20%5C%7Bx%20%3A%20x%5ET%20%5Cmathbf%7BC%7D%20x%20%5Cle%201%20%5C%7D "\mathcal{E} := \{x : x^T \mathbf{C} x \le 1 \}")
 where
 ![\\mathbf{C}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cmathbf%7BC%7D "\mathbf{C}")
 is a non-negative definite central matrix, In applications,

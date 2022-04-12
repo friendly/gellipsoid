@@ -19,14 +19,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-# gellipsoid: Generalized ellipsoids
+# gellipsoid: Generalized Ellipsoids
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
 <!-- badges: end -->
 
-The gellipsoid package extends the class of ellipsoids to "generalized ellipsoids", which are degenerate ellipsoids that are flat and/or unbounded. Thus, ellipsoids can be naturally defined to include lines, hyperplanes, points, cylinders, etc.
+The gellipsoid package extends the class of geometric ellipsoids to "generalized ellipsoids", which allow degenerate ellipsoids that are flat and/or unbounded. Thus, ellipsoids can be naturally defined to include lines, hyperplanes, points, cylinders, etc.
 The methods can be used to represent generalized ellipsoids in a $d$-dimensional space
 $\mathbf{R}^d$, with plots in up to 3D.
 
@@ -40,6 +40,7 @@ The implementation uses a $(\mathbf{U}, \mathbf{D})$ representation,
 based on the singular value decomposition (SVD)
 of an ellipsoid-generating matrix, $\mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{V}^{T}$,
 where $\mathbf{U}$ is square orthogonal and $\mathbf{D}$ is diagonal.
+
 For the usual, "proper" ellipsoids, $\mathbf{A}$ is positive-definite so all elements of $\mathbf{D}$ are positive.
 In generalized ellipsoids, $\mathbf{D}$ is extended to non-negative real numbers, i.e. 
 its elements can be 0, Inf or a positive real.

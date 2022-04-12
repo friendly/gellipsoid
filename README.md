@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# gellipsoid: Generalized ellipsoids
+# gellipsoid: Generalized Ellipsoids
 
 <!-- badges: start -->
 
@@ -10,11 +10,11 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
 <!-- badges: end -->
 
-The gellipsoid package extends the class of ellipsoids to “generalized
-ellipsoids”, which are degenerate ellipsoids that are flat and/or
-unbounded. Thus, ellipsoids can be naturally defined to include lines,
-hyperplanes, points, cylinders, etc. The methods can be used to
-represent generalized ellipsoids in a
+The gellipsoid package extends the class of geometric ellipsoids to
+“generalized ellipsoids”, which allow degenerate ellipsoids that are
+flat and/or unbounded. Thus, ellipsoids can be naturally defined to
+include lines, hyperplanes, points, cylinders, etc. The methods can be
+used to represent generalized ellipsoids in a
 ![d](http://chart.apis.google.com/chart?cht=tx&chl=d "d")-dimensional
 space
 ![\\mathbf{R}^d](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BR%7D%5Ed "\mathbf{R}^d"),
@@ -39,7 +39,9 @@ where
 ![\\mathbf{U}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BU%7D "\mathbf{U}")
 is square orthogonal and
 ![\\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
-is diagonal. For the usual, “proper” ellipsoids,
+is diagonal.
+
+For the usual, “proper” ellipsoids,
 ![\\mathbf{A}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BA%7D "\mathbf{A}")
 is positive-definite so all elements of
 ![\\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")

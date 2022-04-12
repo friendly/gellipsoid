@@ -41,7 +41,9 @@ ellipsoid <- function(center,
 
 	# adapted from the shapes3d demo in the rgl package and from the Rcmdr package
 	degvec <- seq(0, 2*pi, length=segments)
-	ecoord2 <- function(p) c(cos(p[1])*sin(p[2]), sin(p[1])*sin(p[2]), cos(p[2]))
+	ecoord2 <- function(p) c(cos(p[1])*sin(p[2]), 
+	                         sin(p[1])*sin(p[2]), 
+	                         cos(p[2]))
 	v <- t(apply(expand.grid(degvec,degvec), 1, ecoord2))
 	if (!warn.rank){
 		warn <- options(warn=-1)

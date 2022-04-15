@@ -1,17 +1,15 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# gellipsoid: Generalized Ellipsoids
-
-\<img src=“man/figures/gellipsoid-logo.png” align=“right” width=““150px”
-/>
-
 <!-- badges: start -->
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
 <!-- badges: end -->
+
+# gellipsoid: Generalized Ellipsoids
+
+<img src="man/figures/gellipsoid-logo.png" align="right" width="150px" />
 
 The gellipsoid package extends the class of geometric ellipsoids to
 “generalized ellipsoids”, which allow degenerate ellipsoids that are

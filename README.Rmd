@@ -19,13 +19,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-# gellipsoid: Generalized Ellipsoids 
-<img src="man/figures/gellipsoid-logo.png" align="right" width=""150px" />
-
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
 <!-- badges: end -->
+
+# gellipsoid: Generalized Ellipsoids 
+<img src="man/figures/gellipsoid-logo.png" align="right" width="150px" />
 
 The gellipsoid package extends the class of geometric ellipsoids to "generalized ellipsoids", which allow degenerate ellipsoids that are flat and/or unbounded. Thus, ellipsoids can be naturally defined to include lines, hyperplanes, points, cylinders, etc.
 The methods can be used to represent generalized ellipsoids in a $d$-dimensional space

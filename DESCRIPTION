@@ -1,12 +1,12 @@
 Package: gellipsoid
 Type: Package
-Title: Generalized ellipsoids
-Version: 0.7.0
-Date: 2020-02-26
+Title: Generalized Ellipsoids
+Version: 0.7.1
+Date: 2022-04-12
 Author: Georges Monette [aut],
         Michael Friendly [aut, cre]
 Maintainer: Michael Friendly <friendly@yorku.ca>
-Description: Represent generalized ellipsoids with the "(U,D)" representation. It allows degenerate
+Description: Represent generalized geometric ellipsoids with the "(U,D)" representation. It allows degenerate
 	and/or unbounded ellipsoids, together with methods for linear and duality transformations, and for plotting. 
 Depends: rgl
 URL: https://github.com/friendly/gellipsoid

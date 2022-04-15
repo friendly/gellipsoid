@@ -12,6 +12,7 @@ Depends: rgl
 URL: https://github.com/friendly/gellipsoid
 Encoding: UTF-8
 License: GPL (>= 2)
+Language: en-US
 LazyLoad: yes
 Packaged: 2012-06-05 14:20:43 UTC; friendly
 RoxygenNote: 7.1.2

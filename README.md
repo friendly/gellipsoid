@@ -3,6 +3,9 @@
 
 # gellipsoid: Generalized Ellipsoids
 
+\<img src=“man/figures/gellipsoid-logo.png” align=“right” width=““150px”
+/>
+
 <!-- badges: start -->
 
 [![Lifecycle:

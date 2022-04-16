@@ -282,7 +282,7 @@ determines a proper, fat ellipsoid; it’s inverse
 ![C_1^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=C_1%5E%7B-1%7D "C_1^{-1}")
 also generates a proper ellipsoid.
 ![C_2](http://chart.apis.google.com/chart?cht=tx&chl=C_2 "C_2") (red)
-determines an improper, fat ellipsoid, whose inverse
+determines an improper, flat ellipsoid, whose inverse
 ![C_2^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=C_2%5E%7B-1%7D "C_2^{-1}")
 is an unbounded cylinder of elliptical cross-section.
 ![C_2](http://chart.apis.google.com/chart?cht=tx&chl=C_2 "C_2") is the

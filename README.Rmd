@@ -153,7 +153,7 @@ signature(dual(zorigin))
 
 The following figure shows views of two generalized ellipsoids.
 $C_1$ (blue) determines a proper, fat ellipsoid; it's inverse $C_1^{-1}$ also generates a proper ellipsoid.
-$C_2$ (red) determines an improper, fat ellipsoid, whose inverse $C_2^{-1}$ is an unbounded cylinder of elliptical
+$C_2$ (red) determines an improper, flat ellipsoid, whose inverse $C_2^{-1}$ is an unbounded cylinder of elliptical
 cross-section.
 $C_2$ is the projection of $C_1$ onto the plane where $z = 0$.
 The scale of these ellipsoids is defined by the gray unit sphere.

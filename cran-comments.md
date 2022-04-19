@@ -5,7 +5,8 @@
 * rhub: Fedora Linux, R-devel, clang, gfortran
 
 ## gellipsoid package
-This is the first CRAN release of this package
+This is the first CRAN release of this package.
+It is a re-submission correcting an issue re: use of `options(warn=-1)`
 
 ## R CMD check results
 

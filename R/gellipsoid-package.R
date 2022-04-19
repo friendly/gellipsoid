@@ -9,8 +9,8 @@
 #' 
 #' \tabular{ll}{ 
 #' Package:  \tab gellipsoid\cr Type: \tab Package\cr 
-#' Version:  \tab 0.6\cr 
-#' Date:     \tab 2020-02-26\cr 
+#' Version:  \tab 0.7.2\cr 
+#' Date:     \tab 2022-04-19\cr 
 #' License:  \tab GPL (>=2)\cr 
 #' LazyLoad: \tab yes\cr 
 #' }

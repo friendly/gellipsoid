@@ -172,7 +172,7 @@ knitr::include_graphics("man/figures/gell3d-4.png")
 
 Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
 Insights: Understanding Statistical Methods through Elliptical Geometry.
-_Statistical Science_, **28**(1), 1-39. https://doi.org/10.1214/12-STS402.
+_Statistical Science_, **28**(1), 1-39. https://arxiv.org/abs/1302.4881.
 
 Friendly, M. (2013). Supplementary materials for "Elliptical Insights ...",
 https://www.datavis.ca/papers/ellipses/ 

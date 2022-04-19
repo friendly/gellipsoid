@@ -4,7 +4,8 @@
 #' 
 #' Represents generalized ellipsoids with the "(U,D)" representation, allowing
 #' both degenerate and unbounded ellipsoids, together with methods for linear
-#' and duality transformations, and for plotting
+#' and duality transformations, and for plotting. 
+#' The ideas are described in Friendly, Monette & Fox (2013) \doi{10.1214/12-STS402}.
 #' 
 #' \tabular{ll}{ 
 #' Package:  \tab gellipsoid\cr Type: \tab Package\cr 

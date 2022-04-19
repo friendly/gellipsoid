@@ -304,6 +304,7 @@ This figure illustrates the orthogonality of each
 Friendly, M., Monette, G. and Fox, J. (2013). Elliptical Insights:
 Understanding Statistical Methods through Elliptical Geometry.
 *Statistical Science*, **28**(1), 1-39.
+<https://doi.org/10.1214/12-STS402>.
 
 Friendly, M. (2013). Supplementary materials for “Elliptical Insights
 …”, <https://www.datavis.ca/papers/ellipses/>

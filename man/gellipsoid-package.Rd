@@ -9,7 +9,7 @@
 Represents generalized ellipsoids with the "(U,D)" representation, allowing
 both degenerate and unbounded ellipsoids, together with methods for linear
 and duality transformations, and for plotting.
-This permits exploration of a variety to statistical issues that cen be visualized using ellipsoids
+This permits exploration of a variety to statistical issues that can be visualized using ellipsoids
 as discussed by Friendly, Fox & Monette (2013), "Elliptical Insights: Understanding Statistical Methods 
 and duality transformations, and for plotting. 
 The ideas are described in Friendly, Monette & Fox (2013) \doi{10.1214/12-STS402}.

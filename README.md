@@ -31,7 +31,7 @@ transformation of an ellipsoid with central matrix
 or its inverse
 ![\mathbf{C}^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D%5E%7B-1%7D "\mathbf{C}^{-1}")
 which apply equally to unbounded and/or degenerate ellipsoids. This
-permits exploration of a variety to statistical issues that cen be
+permits exploration of a variety to statistical issues that can be
 visualized using ellipsoids as discussed by Friendly, Fox & Monette
 (2013), *Elliptical Insights: Understanding Statistical Methods Through
 Elliptical Geometry* <doi:10.1214/12-STS402>.

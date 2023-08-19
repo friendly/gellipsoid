@@ -37,7 +37,7 @@ $\mathbf{R}^d$, with plots in up to 3D.
 
 The goal is to be able to think about, visualize, and compute a linear transformation of an ellipsoid with central matrix
 $\mathbf{C}$ or its inverse $\mathbf{C}^{-1}$ which apply equally to unbounded and/or degenerate ellipsoids.
-This permits exploration of a variety to statistical issues that cen be visualized using ellipsoids
+This permits exploration of a variety to statistical issues that can be visualized using ellipsoids
 as discussed by Friendly, Fox & Monette (2013), _Elliptical Insights: Understanding Statistical Methods 
 Through Elliptical Geometry_ <doi:10.1214/12-STS402>.
 

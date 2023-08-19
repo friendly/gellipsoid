@@ -4,3 +4,4 @@
 work/
 ^cran-comments\.md$
 ^CRAN-SUBMISSION$
+NAMESPACE-old

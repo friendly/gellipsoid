@@ -4,12 +4,25 @@
 #' 
 #' Represents generalized ellipsoids with the "(U,D)" representation, allowing
 #' both degenerate and unbounded ellipsoids, together with methods for linear
+<<<<<<< HEAD
 #' and duality transformations, and for plotting.
 #' This permits exploration of a variety to statistical issues that cen be visualized using ellipsoids
 #' as discussed by Friendly, Fox & Monette (2013), "Elliptical Insights: Understanding Statistical Methods 
 #  Through Elliptical Geometry" <doi:10.1214/12-STS402>.
 
 #' 
+=======
+#' and duality transformations, and for plotting. 
+#' The ideas are described in Friendly, Monette & Fox (2013) \doi{10.1214/12-STS402}.
+#' 
+#' \tabular{ll}{ 
+#' Package:  \tab gellipsoid\cr Type: \tab Package\cr 
+#' Version:  \tab 0.7.2\cr 
+#' Date:     \tab 2022-04-19\cr 
+#' License:  \tab GPL (>=2)\cr 
+#' LazyLoad: \tab yes\cr 
+#' }
+>>>>>>> 431bc9fbb60a42b1fe5576209ae78ced6239249f
 #' 
 #' It uses the (U, D) representation of generalized ellipsoids in \eqn{R^d},
 #' where

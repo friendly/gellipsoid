@@ -45,11 +45,16 @@ ellipsoid <- function(center,
 	                         sin(p[1])*sin(p[2]), 
 	                         cos(p[2]))
 	v <- t(apply(expand.grid(degvec,degvec), 1, ecoord2))
-	if (!warn.rank){
-		warn <- options(warn=-1)
-		on.exit(options(warn))
+	# if (!warn.rank){
+	# 	warn <- options(warn=-1)
+	# 	on.exit(options(warn))
+	# }
+	if (warn.rank) {
+  	Q <- chol(shape, pivot=TRUE)
 	}
-	Q <- chol(shape, pivot=TRUE)
+	else {
+	  Q <- suppressWarnings(chol(shape, pivot=TRUE))
+	}
 	order <- order(attr(Q, "pivot"))
 	v <- center + radius * t(v %*% Q[, order])
 	v <- rbind(v, rep(1,ncol(v))) 

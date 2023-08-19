@@ -157,7 +157,7 @@ signature(dual(zorigin))
 
 The following figure shows views of two generalized ellipsoids.
 $C_1$ (blue) determines a proper, fat ellipsoid; it's inverse $C_1^{-1}$ also generates a proper ellipsoid.
-$C_2$ (red) determines an improper, fat ellipsoid, whose inverse $C_2^{-1}$ is an unbounded cylinder of elliptical
+$C_2$ (red) determines an improper, flat ellipsoid, whose inverse $C_2^{-1}$ is an unbounded cylinder of elliptical
 cross-section.
 $C_2$ is the projection of $C_1$ onto the plane where $z = 0$.
 The scale of these ellipsoids is defined by the gray unit sphere.
@@ -176,9 +176,7 @@ knitr::include_graphics("man/figures/gell3d-4.png")
 
 Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
 Insights: Understanding Statistical Methods through Elliptical Geometry.
-_Statistical Science_, **28**(1), 1-39.
-[Online paper](https://www.datavis.ca/papers/ellipses-STS402.pdf),
-[Supp material]()
+[Online paper](https://www.datavis.ca/papers/ellipses-STS402.pdf)
 
 Friendly, M. (2013). Supplementary materials for "Elliptical Insights ...",
 https://www.datavis.ca/papers/ellipses/ 

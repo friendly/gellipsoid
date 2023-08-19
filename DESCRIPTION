@@ -2,6 +2,7 @@ Package: gellipsoid
 Type: Package
 Title: Generalized Ellipsoids
 Version: 0.7.2
+<<<<<<< HEAD
 Date: 2023-08-19
 Author: Georges Monette [aut],
         Michael Friendly [aut, cre]

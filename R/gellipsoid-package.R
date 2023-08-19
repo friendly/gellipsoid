@@ -8,8 +8,6 @@
 #' This permits exploration of a variety to statistical issues that cen be visualized using ellipsoids
 #' as discussed by Friendly, Fox & Monette (2013), "Elliptical Insights: Understanding Statistical Methods 
 #  Through Elliptical Geometry" <doi:10.1214/12-STS402>.
-
-#' 
 #' 
 #' It uses the (U, D) representation of generalized ellipsoids in \eqn{R^d},
 #' where

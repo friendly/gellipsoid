@@ -8,6 +8,11 @@
 
 0 errors | 0 warnings | 1 note
 
+Possibly misspelled words in DESCRIPTION:
+  hyperplanes (11:59)
+
+This is a false positive. "hyperplanes" is perfectly acceptable.
+
 ## Reverse dependencies
 
 > revdep()

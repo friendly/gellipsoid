@@ -20,8 +20,9 @@ knitr::opts_chunk$set(
 ```
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
+[![CRAN](https://www.r-pkg.org/badges/version/gellipsoid)](https://cran.r-project.org/package=gellipsoid) 
 <!-- badges: end -->
 
 # gellipsoid: Generalized Ellipsoids 
@@ -36,6 +37,9 @@ $\mathbf{R}^d$, with plots in up to 3D.
 
 The goal is to be able to think about, visualize, and compute a linear transformation of an ellipsoid with central matrix
 $\mathbf{C}$ or its inverse $\mathbf{C}^{-1}$ which apply equally to unbounded and/or degenerate ellipsoids.
+This permits exploration of a variety to statistical issues that cen be visualized using ellipsoids
+as discussed by Friendly, Fox & Monette (2013), _Elliptical Insights: Understanding Statistical Methods 
+Through Elliptical Geometry_ <doi:10.1214/12-STS402>.
 
 The implementation uses a $(\mathbf{U}, \mathbf{D})$ representation,
 based on the singular value decomposition (SVD)
@@ -173,6 +177,8 @@ knitr::include_graphics("man/figures/gell3d-4.png")
 Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
 Insights: Understanding Statistical Methods through Elliptical Geometry.
 _Statistical Science_, **28**(1), 1-39.
+[Online paper](https://www.datavis.ca/papers/ellipses-STS402.pdf),
+[Supp material]()
 
 Friendly, M. (2013). Supplementary materials for "Elliptical Insights ...",
 https://www.datavis.ca/papers/ellipses/ 

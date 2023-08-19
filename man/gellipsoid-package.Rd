@@ -8,24 +8,20 @@
 \description{
 Represents generalized ellipsoids with the "(U,D)" representation, allowing
 both degenerate and unbounded ellipsoids, together with methods for linear
-and duality transformations, and for plotting
+and duality transformations, and for plotting.
+This permits exploration of a variety to statistical issues that cen be visualized using ellipsoids
+as discussed by Friendly, Fox & Monette (2013), "Elliptical Insights: Understanding Statistical Methods
 }
 \details{
-\tabular{ll}{ 
-Package:  \tab gellipsoid\cr Type: \tab Package\cr 
-Version:  \tab 0.6\cr 
-Date:     \tab 2020-02-26\cr 
-License:  \tab GPL (>=2)\cr 
-LazyLoad: \tab yes\cr 
-}
-
-(U, D) representation of generalized ellipsoids in \eqn{R^d}.
-
-(U is square orthogonal and D diagonal with extended non-negative real
-numbers, i.e. 0, Inf or a positive real).
+It uses the (U, D) representation of generalized ellipsoids in \eqn{R^d},
+where
+\eqn{U} is square orthogonal and \eqn{D} is diagonal with extended non-negative real
+numbers, i.e. 0, Inf or a positive real). These are roughly analogous to the
+corresponding terms in the singular-value decomposition of a matrix,
+\eqn{X = U D V'}.
 
 The resulting class of ellipsoids includes degenerate ellipsoids that are
-flat and/or unbounded. Thus ellipsoids are naturally defined to include
+flat and/or unbounded. Thus ellipsoids are naturally extended to include
 lines, hyperplanes, points, cylinders, etc.
 
 The class is closed under linear and affine transformations (including those
@@ -62,7 +58,7 @@ the U = [ U_1 U_2 ] and D = diag( c(Inf,...,Inf, 0,..,0)) where the number
 of Inf's is equal to the number of columns of U_1.
 
 \item From a transformation of the unit sphere given by A(Unit sphere) where
-\eqn{A = UDV'}, i.e. the SVD.
+\eqn{A = U D V'}, i.e. the SVD.
 
 \item (Generalization of 4): (A, d) where A is any matrix and d is a vector of
 factors corresponding to columns of A. These factors can be 0, positive or
@@ -96,10 +92,12 @@ signature(dual(zhplane))
 \references{
 Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
 Insights: Understanding Statistical Methods through Elliptical Geometry.
-\emph{Statistical Science}, \bold{28}(1), 1-39.
+\emph{Statistical Science}, \bold{28}(1), 1-39. 
+Online: \url{https://www.datavis.ca/papers/ellipses-STS402.pdf},
+DOI: \doi{10.1214/12-STS402}
 }
 \seealso{
-None yet %~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
+\code{\link{dual}}, \code{\link{ellipsoid}}, \code{\link{gell}},  \code{\link{UD}}
 }
 \author{
 Georges Monette and Michael Friendly

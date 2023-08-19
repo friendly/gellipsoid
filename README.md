@@ -3,8 +3,9 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
+[![CRAN](https://www.r-pkg.org/badges/version/gellipsoid)](https://cran.r-project.org/package=gellipsoid)
 <!-- badges: end -->
 
 # gellipsoid: Generalized Ellipsoids
@@ -18,7 +19,7 @@ include lines, hyperplanes, points, cylinders, etc. The methods can be
 used to represent generalized ellipsoids in a
 ![d](http://chart.apis.google.com/chart?cht=tx&chl=d "d")-dimensional
 space
-![\\mathbf{R}^d](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BR%7D%5Ed "\mathbf{R}^d"),
+![\mathbf{R}^d](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BR%7D%5Ed "\mathbf{R}^d"),
 with plots in up to 3D.
 
 <!-- The motivation for this more general representation is to allow a notation for a class of generalized ellipsoids -->
@@ -26,83 +27,87 @@ with plots in up to 3D.
 
 The goal is to be able to think about, visualize, and compute a linear
 transformation of an ellipsoid with central matrix
-![\\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
+![\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
 or its inverse
-![\\mathbf{C}^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D%5E%7B-1%7D "\mathbf{C}^{-1}")
-which apply equally to unbounded and/or degenerate ellipsoids.
+![\mathbf{C}^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D%5E%7B-1%7D "\mathbf{C}^{-1}")
+which apply equally to unbounded and/or degenerate ellipsoids. This
+permits exploration of a variety to statistical issues that cen be
+visualized using ellipsoids as discussed by Friendly, Fox & Monette
+(2013), *Elliptical Insights: Understanding Statistical Methods Through
+Elliptical Geometry* <doi:10.1214/12-STS402>.
 
 The implementation uses a
-![(\\mathbf{U}, \\mathbf{D})](http://chart.apis.google.com/chart?cht=tx&chl=%28%5Cmathbf%7BU%7D%2C%20%5Cmathbf%7BD%7D%29 "(\mathbf{U}, \mathbf{D})")
+![(\mathbf{U}, \mathbf{D})](http://chart.apis.google.com/chart?cht=tx&chl=%28%5Cmathbf%7BU%7D%2C%20%5Cmathbf%7BD%7D%29 "(\mathbf{U}, \mathbf{D})")
 representation, based on the singular value decomposition (SVD) of an
 ellipsoid-generating matrix,
-![\\mathbf{A} = \\mathbf{U} \\mathbf{D} \\mathbf{V}^{T}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BA%7D%20%3D%20%5Cmathbf%7BU%7D%20%5Cmathbf%7BD%7D%20%5Cmathbf%7BV%7D%5E%7BT%7D "\mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{V}^{T}"),
+![\mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{V}^{T}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BA%7D%20%3D%20%5Cmathbf%7BU%7D%20%5Cmathbf%7BD%7D%20%5Cmathbf%7BV%7D%5E%7BT%7D "\mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{V}^{T}"),
 where
-![\\mathbf{U}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BU%7D "\mathbf{U}")
+![\mathbf{U}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BU%7D "\mathbf{U}")
 is square orthogonal and
-![\\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
+![\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
 is diagonal.
 
 For the usual, “proper” ellipsoids,
-![\\mathbf{A}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BA%7D "\mathbf{A}")
+![\mathbf{A}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BA%7D "\mathbf{A}")
 is positive-definite so all elements of
-![\\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
+![\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
 are positive. In generalized ellipsoids,
-![\\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
+![\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
 is extended to non-negative real numbers, i.e.  its elements can be 0,
 Inf or a positive real.
 
 #### Definitions
 
 A *proper* ellipsoid in
-![\\mathbf{R}^d](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BR%7D%5Ed "\mathbf{R}^d")
+![\mathbf{R}^d](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BR%7D%5Ed "\mathbf{R}^d")
 can be defined by
-![\\mathbf{E} := \\{x \\; : \\; x^T \\mathbf{C} x \\le 1 \\}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BE%7D%20%3A%3D%20%5C%7Bx%20%5C%3B%20%3A%20%5C%3B%20x%5ET%20%5Cmathbf%7BC%7D%20x%20%5Cle%201%20%5C%7D "\mathbf{E} := \{x \; : \; x^T \mathbf{C} x \le 1 \}")
+![\mathbf{E} := \\x \\ : \\ x^T \mathbf{C} x \le 1 \\](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BE%7D%20%3A%3D%20%5C%7Bx%20%5C%3B%20%3A%20%5C%3B%20x%5ET%20%5Cmathbf%7BC%7D%20x%20%5Cle%201%20%5C%7D "\mathbf{E} := \{x \; : \; x^T \mathbf{C} x \le 1 \}")
 where
-![\\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
+![\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
 is a non-negative definite central matrix, In applications,
-![\\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
+![\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
 is typically a variance-covariance matrix A proper ellipsoid is
 *bounded*, with a non-empty interior. We call these **fat** ellipsoids.
 
 A degenerate *flat* ellipsoid corresponds to one where the central
 matrix
-![\\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
+![\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
 is singular or when there are one or more zero singular values in
-![\\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}").
+![\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}").
 In 3D, a generalized ellipsoid that is flat in one dimension
-(![\\mathbf{D} = \\mathrm{diag} \\{X, X, 0\\}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D%20%3D%20%5Cmathrm%7Bdiag%7D%20%5C%7BX%2C%20X%2C%200%5C%7D "\mathbf{D} = \mathrm{diag} \{X, X, 0\}"))
+(![\mathbf{D} = \mathrm{diag} \\X, X, 0\\](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D%20%3D%20%5Cmathrm%7Bdiag%7D%20%5C%7BX%2C%20X%2C%200%5C%7D "\mathbf{D} = \mathrm{diag} \{X, X, 0\}"))
 collapses to an ellipse; one that is flat in two dimensions
-(![\\mathbf{D} = \\mathrm{diag} \\{X, 0, 0\\}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D%20%3D%20%5Cmathrm%7Bdiag%7D%20%5C%7BX%2C%200%2C%200%5C%7D "\mathbf{D} = \mathrm{diag} \{X, 0, 0\}"))
+(![\mathbf{D} = \mathrm{diag} \\X, 0, 0\\](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D%20%3D%20%5Cmathrm%7Bdiag%7D%20%5C%7BX%2C%200%2C%200%5C%7D "\mathbf{D} = \mathrm{diag} \{X, 0, 0\}"))
 collapses to a line, and one that is flat in three dimensions collapses
 to a point.
 
 An *unbounded* ellipsoid is one that has infinite extent in one or more
 directions, and is characterized by infinite singular values in
-![\\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}").
+![\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}").
 For example, in 3D, an unbounded ellipsoid with one infinite singular
 value is an infinite cylinder of elliptical cross-section.
 
 ## Principal functions
 
--   `gell()` Constructs a generalized ellipsoid using the
-    ![(\\mathbf{U}, \\mathbf{D})](http://chart.apis.google.com/chart?cht=tx&chl=%28%5Cmathbf%7BU%7D%2C%20%5Cmathbf%7BD%7D%29 "(\mathbf{U}, \mathbf{D})")
-    representation. The inputs can be specified in a variety of ways:
+- `gell()` Constructs a generalized ellipsoid using the
+  ![(\mathbf{U}, \mathbf{D})](http://chart.apis.google.com/chart?cht=tx&chl=%28%5Cmathbf%7BU%7D%2C%20%5Cmathbf%7BD%7D%29 "(\mathbf{U}, \mathbf{D})")
+  representation. The inputs can be specified in a variety of ways:
 
-    -   a non-negative definite variance matrix;
-    -   an inner-product matrix
-    -   a subspace with a given span
-    -   a matrix giving a linear transformation of the unit sphere
+  - a non-negative definite variance matrix;
+  - an inner-product matrix
+  - a subspace with a given span
+  - a matrix giving a linear transformation of the unit sphere
 
--   `dual()` calculates the dual or inverse of a generalized ellipsoid
+- `dual()` calculates the dual or inverse of a generalized ellipsoid
 
--   `gmult()` calculates a linear transformation of a generalized
-    ellipsoid
+- `gmult()` calculates a linear transformation of a generalized
+  ellipsoid
 
--   `signature()` calculates the signature of a generalized ellipsoid, a
-    vector of length 3 giving the number of positive, zero and infinite
-    singular values in the (U, D) representation.
+- `signature()` calculates the signature of a generalized ellipsoid, a
+  vector of length 3 giving the number of positive, zero and infinite
+  singular values in the (U, D) representation.
 
--   `ell3d()` Plots generalized ellipsoids in 3D using the `rgl` package
+- `ell3d()` Plots generalized ellipsoids in 3D using the `rgl` package
 
 ## Installation
 
@@ -303,7 +308,9 @@ This figure illustrates the orthogonality of each
 
 Friendly, M., Monette, G. and Fox, J. (2013). Elliptical Insights:
 Understanding Statistical Methods through Elliptical Geometry.
-*Statistical Science*, **28**(1), 1-39.
+*Statistical Science*, **28**(1), 1-39. [Online
+paper](https://www.datavis.ca/papers/ellipses-STS402.pdf), [Supp
+material]()
 
 Friendly, M. (2013). Supplementary materials for “Elliptical Insights
 …”, <https://www.datavis.ca/papers/ellipses/>

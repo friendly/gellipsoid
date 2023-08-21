@@ -111,12 +111,18 @@ value is an infinite cylinder of elliptical cross-section.
 
 ## Installation
 
-You can install the development version of gellipsoid from
+You can install the `gellipsoid` package from CRAN as follows:
+
+``` r
+install.packages("gellipsoid")
+```
+
+Or, You can install the development version of gellipsoid from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("friendly/gellipsoid")
+# install.packages("remotes")
+remotes::install_github("friendly/gellipsoid")
 ```
 
 ## Example

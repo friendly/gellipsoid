@@ -1,11 +1,14 @@
 ---
 output:   
   github_document:
+always_allow_html: yes
+---
+
+<!--
     math_method:
       engine: webtex
       url: http://chart.apis.google.com/chart?cht=tx&chl=
-always_allow_html: yes
----
+-->
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -22,11 +25,12 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
-[![CRAN](https://www.r-pkg.org/badges/version/gellipsoid)](https://cran.r-project.org/package=gellipsoid) 
+[![CRAN](https://www.r-pkg.org/badges/version/gellipsoid)](https://cran.r-project.org/package=gellipsoid)
+[![Downloads](https://cranlogs.r-pkg.org/badges/gellipsoid)](https://cran.r-project.org/package=gellipsoid)
+
 <!-- badges: end -->
 
-# gellipsoid: Generalized Ellipsoids 
-<img src="man/figures/gellipsoid-logo.png" align="right" width="150px" />
+# gellipsoid: Generalized Ellipsoids <img src="man/figures/logo.png" align="right" width="150px" />
 
 The gellipsoid package extends the class of geometric ellipsoids to "generalized ellipsoids", which allow degenerate ellipsoids that are flat and/or unbounded. Thus, ellipsoids can be naturally defined to include lines, hyperplanes, points, cylinders, etc.
 The methods can be used to represent generalized ellipsoids in a $d$-dimensional space
@@ -86,7 +90,7 @@ inputs can be specified in a variety of ways:
 
 * `ell3d()` Plots generalized ellipsoids in 3D using the `rgl` package
 
-## Installation
+## Installation 📦
 
 You can install the `gellipsoid` package from CRAN as follows:
 
@@ -101,7 +105,7 @@ Or, You can install the development version of gellipsoid from [GitHub](https://
 remotes::install_github("friendly/gellipsoid")
 ```
 
-## Example
+## Example 🛠
 
 #### Properties of generalized ellipsoids
 The following examples illustrate `gell` objects and their properties. Each of these may be plotted in 3D
@@ -182,7 +186,9 @@ knitr::include_graphics("man/figures/gell3d-4.png")
 
 Friendly, M., Monette, G. and Fox, J. (2013). Elliptical
 Insights: Understanding Statistical Methods through Elliptical Geometry.
-[Online paper](https://www.datavis.ca/papers/ellipses-STS402.pdf)
+_Statistical Science_, **28**(1), 1–39.
+[Online paper](https://www.datavis.ca/papers/ellipses-STS402.pdf);
+[DOI](https://doi.org/10.1214/12-STS402)
 
 Friendly, M. (2013). Supplementary materials for "Elliptical Insights ...",
 https://www.datavis.ca/papers/ellipses/ 

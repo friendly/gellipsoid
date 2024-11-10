@@ -1,4 +1,9 @@
 
+<!--
+    math_method:
+      engine: webtex
+      url: http://chart.apis.google.com/chart?cht=tx&chl=
+-->
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
 
@@ -6,92 +11,69 @@
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![CRAN](https://www.r-pkg.org/badges/version/gellipsoid)](https://cran.r-project.org/package=gellipsoid)
+[![Downloads](https://cranlogs.r-pkg.org/badges/gellipsoid)](https://cran.r-project.org/package=gellipsoid)
+
 <!-- badges: end -->
 
-# gellipsoid: Generalized Ellipsoids
-
-<img src="man/figures/gellipsoid-logo.png" align="right" width="150px" />
+# gellipsoid: Generalized Ellipsoids <img src="man/figures/logo.png" align="right" width="150px" />
 
 The gellipsoid package extends the class of geometric ellipsoids to
 “generalized ellipsoids”, which allow degenerate ellipsoids that are
 flat and/or unbounded. Thus, ellipsoids can be naturally defined to
 include lines, hyperplanes, points, cylinders, etc. The methods can be
-used to represent generalized ellipsoids in a
-![d](http://chart.apis.google.com/chart?cht=tx&chl=d "d")-dimensional
-space
-![\mathbf{R}^d](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BR%7D%5Ed "\mathbf{R}^d"),
-with plots in up to 3D.
+used to represent generalized ellipsoids in a $d$-dimensional space
+$\mathbf{R}^d$, with plots in up to 3D.
 
 <!-- The motivation for this more general representation is to allow a notation for a class of generalized ellipsoids -->
 <!-- that is algebraically closed under -->
 
 The goal is to be able to think about, visualize, and compute a linear
-transformation of an ellipsoid with central matrix
-![\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
-or its inverse
-![\mathbf{C}^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D%5E%7B-1%7D "\mathbf{C}^{-1}")
-which apply equally to unbounded and/or degenerate ellipsoids. This
-permits exploration of a variety to statistical issues that can be
-visualized using ellipsoids as discussed by Friendly, Fox & Monette
-(2013), *Elliptical Insights: Understanding Statistical Methods Through
-Elliptical Geometry* <doi:10.1214/12-STS402>.
+transformation of an ellipsoid with central matrix $\mathbf{C}$ or its
+inverse $\mathbf{C}^{-1}$ which apply equally to unbounded and/or
+degenerate ellipsoids. This permits exploration of a variety to
+statistical issues that can be visualized using ellipsoids as discussed
+by Friendly, Fox & Monette (2013), *Elliptical Insights: Understanding
+Statistical Methods Through Elliptical Geometry*
+<doi:10.1214/12-STS402>.
 
-The implementation uses a
-![(\mathbf{U}, \mathbf{D})](http://chart.apis.google.com/chart?cht=tx&chl=%28%5Cmathbf%7BU%7D%2C%20%5Cmathbf%7BD%7D%29 "(\mathbf{U}, \mathbf{D})")
-representation, based on the singular value decomposition (SVD) of an
+The implementation uses a $(\mathbf{U}, \mathbf{D})$ representation,
+based on the singular value decomposition (SVD) of an
 ellipsoid-generating matrix,
-![\mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{V}^{T}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BA%7D%20%3D%20%5Cmathbf%7BU%7D%20%5Cmathbf%7BD%7D%20%5Cmathbf%7BV%7D%5E%7BT%7D "\mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{V}^{T}"),
-where
-![\mathbf{U}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BU%7D "\mathbf{U}")
-is square orthogonal and
-![\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
-is diagonal.
+$\mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{V}^{T}$, where $\mathbf{U}$
+is square orthogonal and $\mathbf{D}$ is diagonal.
 
-For the usual, “proper” ellipsoids,
-![\mathbf{A}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BA%7D "\mathbf{A}")
-is positive-definite so all elements of
-![\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
-are positive. In generalized ellipsoids,
-![\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}")
-is extended to non-negative real numbers, i.e.  its elements can be 0,
-Inf or a positive real.
+For the usual, “proper” ellipsoids, $\mathbf{A}$ is positive-definite so
+all elements of $\mathbf{D}$ are positive. In generalized ellipsoids,
+$\mathbf{D}$ is extended to non-negative real numbers, i.e.  its
+elements can be 0, Inf or a positive real.
 
 #### Definitions
 
-A *proper* ellipsoid in
-![\mathbf{R}^d](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BR%7D%5Ed "\mathbf{R}^d")
-can be defined by
-![\mathbf{E} := \\x \\ : \\ x^T \mathbf{C} x \le 1 \\](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BE%7D%20%3A%3D%20%5C%7Bx%20%5C%3B%20%3A%20%5C%3B%20x%5ET%20%5Cmathbf%7BC%7D%20x%20%5Cle%201%20%5C%7D "\mathbf{E} := \{x \; : \; x^T \mathbf{C} x \le 1 \}")
-where
-![\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
-is a non-negative definite central matrix, In applications,
-![\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
+A *proper* ellipsoid in $\mathbf{R}^d$ can be defined by
+$\mathbf{E} := \{x \; : \; x^T \mathbf{C} x \le 1 \}$ where $\mathbf{C}$
+is a non-negative definite central matrix, In applications, $\mathbf{C}$
 is typically a variance-covariance matrix A proper ellipsoid is
 *bounded*, with a non-empty interior. We call these **fat** ellipsoids.
 
 A degenerate *flat* ellipsoid corresponds to one where the central
-matrix
-![\mathbf{C}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BC%7D "\mathbf{C}")
-is singular or when there are one or more zero singular values in
-![\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}").
-In 3D, a generalized ellipsoid that is flat in one dimension
-(![\mathbf{D} = \mathrm{diag} \\X, X, 0\\](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D%20%3D%20%5Cmathrm%7Bdiag%7D%20%5C%7BX%2C%20X%2C%200%5C%7D "\mathbf{D} = \mathrm{diag} \{X, X, 0\}"))
+matrix $\mathbf{C}$ is singular or when there are one or more zero
+singular values in $\mathbf{D}$. In 3D, a generalized ellipsoid that is
+flat in one dimension ($\mathbf{D} = \mathrm{diag} \{X, X, 0\}$)
 collapses to an ellipse; one that is flat in two dimensions
-(![\mathbf{D} = \mathrm{diag} \\X, 0, 0\\](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D%20%3D%20%5Cmathrm%7Bdiag%7D%20%5C%7BX%2C%200%2C%200%5C%7D "\mathbf{D} = \mathrm{diag} \{X, 0, 0\}"))
-collapses to a line, and one that is flat in three dimensions collapses
-to a point.
+($\mathbf{D} = \mathrm{diag} \{X, 0, 0\}$) collapses to a line, and one
+that is flat in three dimensions collapses to a point.
 
 An *unbounded* ellipsoid is one that has infinite extent in one or more
 directions, and is characterized by infinite singular values in
-![\mathbf{D}](http://chart.apis.google.com/chart?cht=tx&chl=%5Cmathbf%7BD%7D "\mathbf{D}").
-For example, in 3D, an unbounded ellipsoid with one infinite singular
-value is an infinite cylinder of elliptical cross-section.
+$\mathbf{D}$. For example, in 3D, an unbounded ellipsoid with one
+infinite singular value is an infinite cylinder of elliptical
+cross-section.
 
 ## Principal functions
 
 - `gell()` Constructs a generalized ellipsoid using the
-  ![(\mathbf{U}, \mathbf{D})](http://chart.apis.google.com/chart?cht=tx&chl=%28%5Cmathbf%7BU%7D%2C%20%5Cmathbf%7BD%7D%29 "(\mathbf{U}, \mathbf{D})")
-  representation. The inputs can be specified in a variety of ways:
+  $(\mathbf{U}, \mathbf{D})$ representation. The inputs can be specified
+  in a variety of ways:
 
   - a non-negative definite variance matrix;
   - an inner-product matrix
@@ -109,7 +91,7 @@ value is an infinite cylinder of elliptical cross-section.
 
 - `ell3d()` Plots generalized ellipsoids in 3D using the `rgl` package
 
-## Installation
+## Installation 📦
 
 You can install the `gellipsoid` package from CRAN as follows:
 
@@ -125,7 +107,7 @@ Or, You can install the development version of gellipsoid from
 remotes::install_github("friendly/gellipsoid")
 ```
 
-## Example
+## Example 🛠
 
 #### Properties of generalized ellipsoids
 
@@ -134,9 +116,7 @@ Each of these may be plotted in 3D using `ell3d()`. These objects can be
 specified in a variety of ways, but for these examples the span is
 simplest.
 
-A unit sphere in
-![R^3](http://chart.apis.google.com/chart?cht=tx&chl=R%5E3 "R^3") has a
-central matrix of the identity matrix.
+A unit sphere in $R^3$ has a central matrix of the identity matrix.
 
 ``` r
 library(gellipsoid)
@@ -164,9 +144,7 @@ isFlat(zsph)
 #> [1] FALSE
 ```
 
-A plane in
-![R^3](http://chart.apis.google.com/chart?cht=tx&chl=R%5E3 "R^3") is
-flat in one dimension.
+A plane in $R^3$ is flat in one dimension.
 
 ``` r
 (zplane <- gell(span = diag(3)[, 1:2]))  # a plane
@@ -287,34 +265,26 @@ signature(dual(zorigin))
 
 #### Drawing generalized ellipsoids
 
-The following figure shows views of two generalized ellipsoids.
-![C_1](http://chart.apis.google.com/chart?cht=tx&chl=C_1 "C_1") (blue)
-determines a proper, fat ellipsoid; it’s inverse
-![C_1^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=C_1%5E%7B-1%7D "C_1^{-1}")
-also generates a proper ellipsoid.
-![C_2](http://chart.apis.google.com/chart?cht=tx&chl=C_2 "C_2") (red)
-determines an improper, flat ellipsoid, whose inverse
-![C_2^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=C_2%5E%7B-1%7D "C_2^{-1}")
-is an unbounded cylinder of elliptical cross-section.
-![C_2](http://chart.apis.google.com/chart?cht=tx&chl=C_2 "C_2") is the
-projection of
-![C_1](http://chart.apis.google.com/chart?cht=tx&chl=C_1 "C_1") onto the
-plane where
-![z = 0](http://chart.apis.google.com/chart?cht=tx&chl=z%20%3D%200 "z = 0").
-The scale of these ellipsoids is defined by the gray unit sphere.
+The following figure shows views of two generalized ellipsoids. $C_1$
+(blue) determines a proper, fat ellipsoid; it’s inverse $C_1^{-1}$ also
+generates a proper ellipsoid. $C_2$ (red) determines an improper, flat
+ellipsoid, whose inverse $C_2^{-1}$ is an unbounded cylinder of
+elliptical cross-section. $C_2$ is the projection of $C_1$ onto the
+plane where $z = 0$. The scale of these ellipsoids is defined by the
+gray unit sphere.
 
 <img src="man/figures/gell3d-1.png" width="60%" />
 
-This figure illustrates the orthogonality of each
-![C](http://chart.apis.google.com/chart?cht=tx&chl=C "C") and its dual,
-![C^{-1}](http://chart.apis.google.com/chart?cht=tx&chl=C%5E%7B-1%7D "C^{-1}").
-<img src="man/figures/gell3d-4.png" width="60%" />
+This figure illustrates the orthogonality of each $C$ and its dual,
+$C^{-1}$. <img src="man/figures/gell3d-4.png" width="60%" />
 
 ## References
 
 Friendly, M., Monette, G. and Fox, J. (2013). Elliptical Insights:
-Understanding Statistical Methods through Elliptical Geometry. [Online
-paper](https://www.datavis.ca/papers/ellipses-STS402.pdf)
+Understanding Statistical Methods through Elliptical Geometry.
+*Statistical Science*, **28**(1), 1–39. [Online
+paper](https://www.datavis.ca/papers/ellipses-STS402.pdf);
+[DOI](https://doi.org/10.1214/12-STS402)
 
 Friendly, M. (2013). Supplementary materials for “Elliptical Insights
 …”, <https://www.datavis.ca/papers/ellipses/>
